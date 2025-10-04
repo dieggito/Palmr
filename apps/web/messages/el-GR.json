@@ -1,0 +1,1847 @@
+{
+  "auth": {
+    "errors": {
+      "account_inactive": "Ανενεργός Λογαριασμός. Επικοινωνήστε με τον διαχειριστή.",
+      "registration_disabled": "Το SSO είναι Απενεργοποιημένο.",
+      "token_expired": "Έληξε η συνεδρία. Ξαναδοκιμάστε.",
+      "config_error": "Σφάλμα ρύθμισεων. Επικοινωνήστε με τον διαχειριστή.",
+      "auth_failed": "Σφάλμα αυθεντικοποίησης. Ξαναδοκιμάστε."
+    }
+  },
+  "authProviders": {
+    "title": "Πάροχοι αυθεντικοποίησης",
+    "description": "Ρύθμιση εξωτερικού παρόχου αυθεντικοποίησης SSO",
+    "enabledCount": "{count} Ενεργό",
+    "loadingProviders": "Φόρτωση παρόχων...",
+    "providersConfigured": "{count} πάροχοι ρυθμίστηκαν",
+    "enabledOfTotal": "{enabled} πάροχοι από {total} παρόχους",
+    "hideDisabledProviders": "Απόκρυψη απενεργοποιημένων παρόχων",
+    "addProvider": "Προσθήκη παρόχου",
+    "addProviderTitle": "Προσθήκη παρόχου",
+    "editProvider": "Επεξεργασία παρόχου",
+    "deleteProvider": "Διαγραφή παρόχου",
+    "enabled": "Ενεργό",
+    "disabled": "Ανενεργό",
+    "officialProvider": "Γνωστός πάρχοχος",
+    "dragToReorder": "Σύρτε για να οργανώσετε",
+    "dragDisabledMessage": "Το Drag and drop είναι ανενεργό κατά το φιλτράρισμα των παρόχων. Δείτε όλους τους παρόχους για να τους οργανώσετε.",
+    "dragEnabledMessage": "Σύρτε για να τους οργανώσετε. Η τελική σειρά θα φαίνετε στην οθόνη login.",
+    "noProvidersEnabled": "Δέν υπάρχουυν ενεργοί πάροχοι αυθεντικοποίησης",
+    "noProvidersConfigured": "Δεν υπάρχουν πάροχοι με ρυθμίσεις",
+    "form": {
+      "providerName": "Ονομα παρόχου",
+      "providerNamePlaceholder": "π.χ., mycompany",
+      "displayName": "Εμφανιζόμενο όνομα",
+      "displayNamePlaceholder": "π.χ., My Company SSO",
+      "type": "Type",
+      "typeOidc": "OIDC (OpenID Connect)",
+      "typeOauth2": "OAuth 2.0",
+      "icon": "Εικονίδιο",
+      "iconPlaceholder": "Επιλέξτε ενα εικονίδιο",
+      "clientId": "Client ID",
+      "clientIdPlaceholder": "Your OAuth client ID",
+      "clientSecret": "Client Secret",
+      "clientSecretPlaceholder": "Your OAuth client secret",
+      "oauthScopes": "OAuth Scopes",
+      "scopesPlaceholder": "Εισάγετε scopes (π.χ., openid, profile, email)",
+      "scopesHelpOidc": "Προτείνόμενα Scopes βάσει του URL του παρόχου. Συνηθισμένα OIDC scopes: openid, profile, email, groups",
+      "scopesHelpOauth2": "Προτείνόμενα Scopes βάσει του URL του παρόχου. Συνηθισμένα OAuth2 scopes με βάση τον πάροχο",
+      "providerUrl": "URL παρόχου",
+      "providerUrlPlaceholder": "https://auth.example.com",
+      "providerUrlAutoPlaceholder": "https://your-provider.com (τα endpoints θα βρεθούν αυτόματα)",
+      "providerUrlManualPlaceholder": "https://your-provider.com",
+      "autoDiscoveryHelp": "Το σύστημα θα βρεί αυτόματα τα authorization, token, και τα userinfo endpoints",
+      "manualConfigurationHelp": "Base URL του παρόχου (τα endpoints θα είναι σχετικα με αυτό)",
+      "authorizationEndpoint": "Authorization Endpoint",
+      "authorizationEndpointPlaceholder": "https://auth.example.com/auth",
+      "tokenEndpoint": "Token Endpoint",
+      "tokenEndpointPlaceholder": "https://auth.example.com/token",
+      "userInfoEndpoint": "User Info Endpoint",
+      "userInfoEndpointPlaceholder": "https://auth.example.com/userinfo",
+      "configurationMethod": "Configuration Method",
+      "autoDiscovery": "Auto-discovery",
+      "autoDiscoveryDescription": "Αυτόματη ανάκτηση των endpoints απο το URL του παρόχου",
+      "manualEndpoints": "Μη αυτόματα Endpoints (Συνίσταται)",
+      "manualEndpointsDescription": "Μή αυτόματη ρύθμιση των authorization, token, και user info endpoints",
+      "callbackUrl": "Callback URL",
+      "callbackUrlDescription": "Χρήση αυτού του URL στις ρυθμίσεις του πάροχου OAuth",
+      "copyCallbackUrl": "Αντιγραφή Callback URL",
+      "callbackUrlCopied": "Το Callback URL έγινε αντιγραφή στο clipboard!",
+      "adminEmailDomains": "Admin Email Domains",
+      "adminEmailDomainsPlaceholder": "Εισαγωγή domains (π.χ., admin.company.com)",
+      "adminEmailDomainsHelp": "Οι χρήστες με email διευθύνσεις από αυτά τα domain θα πάρουν δικαιώματα διαχειριστή",
+      "autoRegister": "Αυτόματη εγγραφή νέων χρηστών",
+      "officialProviderUrlPlaceholder": "Αντικατάσταση placeholder με το δικό σας {displayName} URL",
+      "officialProviderHelp": "Αναγνωρισμένος πάροχος. Τα Endpoints είναι πρόρυθμισμένα. Μπορείτε να αλλάξετε μόνο το URL.",
+      "officialProviderIconHelp": "Μπορείτε να αλλάξετε το εικονίδιο για τον πάροχο."
+    },
+    "buttons": {
+      "cancel": "Ακύρωση",
+      "save": "Αποθήκευση",
+      "saving": "Αποθήκευση...",
+      "adding": "Προσθήκη...",
+      "updating": "Ενημέρωση...",
+      "saveProvider": "Αποθήκευση παρόχου",
+      "delete": "Διαγραφή",
+      "deleting": "Διαγραφή...",
+      "edit": "Διόρθωση",
+      "enable": "Ενεργοποίηση",
+      "disable": "Απενεργοποίηση"
+    },
+    "messages": {
+      "providerAdded": "Ο πάροχος προστέθηκε επιτυχώς",
+      "providerUpdated": "Ο πάροχος ενημερώθηκε επιτυχώς",
+      "providerDeleted": "Ο πάροχος διαγράφηκε επιτυχώς",
+      "providerOrderUpdated": "Η λίστα των παρόχων ενημερώθηκε επιτυχώς",
+      "fillRequiredFields": "Συμπληρώστε τα υποχρεωτικά πεδία (όνομα, εμφανιζόμενο όνομα, client ID, client secret)",
+      "provideUrlOrEndpoints": "Συμπληρώστε το URL του παρόχου για αυτόματη ανάκτηση ή όλα τα τρία endpoints",
+      "chooseDiscoveryOrManual": "Επιλέξτε αυτόματη ανάκτηση (URL παρόχου) ή τα endpoints, όχι και τα δύο",
+      "loadFailed": "Αποτυχία φόρτωσης παρόχου",
+      "addFailed": "Αποτυχία προσθήκης παρόχου",
+      "updateFailed": "Αποτυχία ενημέρωσης παρόχου",
+      "deleteFailed": "Αποτυχία διγραφής παρόχου",
+      "orderUpdateFailed": "Αποτυχία ενημέρωσης λίστας παρόχων"
+    },
+    "info": {
+      "title": "Πληροφορίες",
+      "officialProvidersRecommended": "Είναι καλύτερα να χρησιμοποιήσετε γνωστούς παρόχους. Αν έχετε προβλήματα με κάποιον όχι γνωστό πάροχο, ξεκινήστε ένα issue στο",
+      "github": "GitHub",
+      "officialProvider": "Official Provider",
+      "officialProviderDescription": "Αυτός ο πάροχος έχει βελτιστοποιηθεί από το Palmr. Μπορούν να ενημερωθούν μόνο συγκεκριμένα στοιχεία.",
+      "manualConfigTitle": "Παραμετροποίηση",
+      "manualConfigDescription": "Ενημερώστε τα endpoints. Σιγουρευτείτε ότι είναι τα κατάλληλα για τον πάροχο."
+    },
+    "deleteModal": {
+      "title": "Διαγραφή παρόχου",
+      "confirmMessage": "Είστε σίγουρος για την διαγραφή του πάροχου \"{displayName}\"  Δεν μπορεί να γίνει αναίρεση.",
+      "providerId": "ID Παρόχου: {name}",
+      "cancel": "Ακύρωση",
+      "delete": "Διαγραφή παρόχου",
+      "deleting": "Διαγραφή..."
+    }
+  },
+  "bulkDownload": {
+    "title": "Μαζικό Download",
+    "zipNameLabel": "Ονομα αρχείου ZIP",
+    "zipNamePlaceholder": "Όνομα αρχείου",
+    "description": "{count, plural, =1 {1 αρχείο θα συμπιεστεί} υπόλοιπα {# files will be compressed}}",
+    "download": "Download ZIP"
+  },
+  "common": {
+    "loading": "Φόρτωση, παρακαλώ περιμένετε...",
+    "loadingSimple": "Φόρτωση...",
+    "cancel": "Ακύρωση",
+    "save": "Αποθήκευση",
+    "saving": "Αποθήκευση...",
+    "update": "Ενημέρωση",
+    "updating": "Ενημέρωση...",
+    "delete": "Διαγραφή",
+    "close": "Κλείσιμο",
+    "download": "Download",
+    "unexpectedError": "Παρουσιάστηκε σφάλμα. Δοκιμάστε ξανά.",
+    "yes": "Ναι",
+    "no": "Οχι",
+    "dashboard": "Πίνακας",
+    "back": "Πίσω",
+    "click": "Κάντε κλίκ",
+    "creating": "Δημιουργία..."
+  },
+  "createShare": {
+    "title": "Δημιουργία κοινής χρήσης",
+    "nameLabel": "Ονομα κοινής χρήσης",
+    "namePlaceholder": "Δώστε όνομα κοινής χρήσης",
+    "descriptionLabel": "Περιγραφή",
+    "descriptionPlaceholder": "Βάλτε περιγραφή (προαιρετικό)",
+    "expirationLabel": "Ημερομηνία λήξης",
+    "expirationPlaceholder": "MM/DD/YYYY HH:MM",
+    "maxViewsLabel": "Περιορισμός εμφανίσεων",
+    "maxViewsPlaceholder": "Αφήστε το καινό για απεριόριστες",
+    "passwordProtection": "Προστασία με Password",
+    "passwordLabel": "Password",
+    "create": "Δημιουργία κοινής χρήσης",
+    "success": "Η κοινή Χρήση δημιουργήθηκε",
+    "error": "Απέτυχε η δημιουργία κοινής χρήσης"
+  },
+  "customization": {
+    "breadcrumb": "Εξατομίκευση",
+    "colors": {
+      "title": "Χρώματα θέματος",
+      "description": "Διαλέξτε το βασικό χρωματικό θέμα",
+      "presets": "Διαθέσιμα χρώματα",
+      "presetsDescription": "Διαλέξτε από τα διαθέσιμα χρώματα",
+      "reset": "Επαναφορά προεπιλογών"
+    },
+    "fonts": {
+      "title": "Γραμματοσειρές",
+      "description": "Επιλέξτε οικογένεια γραμματοσειρών",
+      "available": "Διαθέσιμες Γραμματοσειρές",
+      "availableDescription": "Επιλέξτε απο τις διαθέσιμες",
+      "reset": "Επαναφορά προεπιλογών"
+    },
+    "radius": {
+      "title": "Στρογγυλες γωνίες",
+      "description": "Στρογγυλέψτε τις γωνίες της διεπαφής",
+      "available": "Πόσο στρογγυλές;",
+      "availableDescription": "Επιλέξτε πόσο στρογγυλές θέλετε να εμφανίζονται",
+      "reset": "Επαναφορά προεπιλογών"
+    },
+    "background": {
+      "title": "Χρώματα φόντου",
+      "description": "Αλλαξτε τα χρώματα για φωτεινό ή σκοτεινό φόντο",
+      "lightMode": "Φωτεινό",
+      "darkMode": "Σκοτεινό",
+      "availableDescription": "Αλλαξτε τα χρώματα φόντου για το σκοτείνο και για το φωτεινό θέμα",
+      "reset": "Επαναφορά προεπιλογών"
+    },
+    "theme": {
+      "title": "Φωτεισμός θέματος",
+      "description": "Επιλέξτε φωτεινό, σκοτεινό ή το θέμα προεπιλογής",
+      "selectTheme": "Επιλογή θέματος",
+      "availableDescription": "Επιλέξτε το θέμα που προτιμάτε",
+      "reset": "Επαναφορά προεπιλογών"
+    },
+    "pageTitle": "Εξατομίκευση"
+  },
+  "dashboard": {
+    "loadError": "Απέτυχε η φόρτωση δεδομένων του πίνακα ελέγχου",
+    "linkCopied": "Το link έγινε αντιγραφή",
+    "pageTitle": "Πίνακας ελέγχου",
+    "breadcrumb": "Πίνακας ελέγχου",
+    "recentFiles": {
+      "title": "Πρόσφατα αρχεία",
+      "description": "Τα πιό πρόσφατα αρχεία που κάνατε upload"
+    }
+  },
+  "deleteConfirmation": {
+    "filesToDelete": "Αρχεία για διαγραφή",
+    "sharesToDelete": "Κοινές χρήσης για διαγραφή"
+  },
+  "downloadQueue": {
+    "downloadQueued": "Download σε αναμονή στην ουρά: {fileName}",
+    "queuedDescription": "Το download θα αρχίσει αυτόματα",
+    "queuePosition": "Download σε αναμονή στη σειρά {position}: {fileName}",
+    "estimatedWait": "Εκτιμώμενος χρόνος: {time}",
+    "queueFull": "Η ουρά αναμονής download είναι γεμάτη",
+    "queueFullDescription": "Πάρακαλώ δοκιμάστε σε λίγα λεπτά",
+    "cancelSuccess": "Το Download ακυρώθηκε επιτυχώς",
+    "cancelError": "Απέτυχε η ακύρωση του download: {error}",
+    "status": {
+      "pending": "Προετοιμασία...",
+      "queued": "Στην ουρά",
+      "downloading": "Downloading",
+      "completed": "Ολοκληρώθηκε",
+      "failed": "Απέτυχε"
+    },
+    "waitTime": {
+      "seconds": "{seconds}δ",
+      "minutes": "{minutes}λ",
+      "hoursMinutes": "{hours}ω {minutes}λ"
+    },
+    "indicator": {
+      "title": "Downloads",
+      "downloads": "Ουρά Download",
+      "active": "Ενεργό",
+      "queued": "Σε αναμονή",
+      "position": "Θέση {position}",
+      "estimatedWait": "Αναμονή: {time}",
+      "unknownFile": "Αγνωστο αρχείο",
+      "noDownloads": "Δεν υπάρχουν ενεργά download",
+      "refresh": "Ανανέωση ουράς"
+    }
+  },
+  "emptyState": {
+    "noFiles": "Κανένα αρχείο δεν έχει γίνει upload ακόμα",
+    "uploadFile": "Αρχείο Upload"
+  },
+  "errors": {
+    "invalidCredentials": "Λάθος email ή password",
+    "userNotFound": "Δεν βρεέθηκε ο χρήστης",
+    "accountLocked": "Κλειδωμένος λογαριασμός. Ξαναδοκιμάστε αργότερα",
+    "unexpectedError": "Απροσδόκητο σφάλμα. Δοκιμάστε ξανά",
+    "Invalid verification code": "Λάθος κωδικός επιβεβαίωσης",
+    "Two-factor authentication is already enabled": "Το 2FA είναι ήδη ενεργό",
+    "Two-factor authentication is not enabled": "Το 2FA δεν είναι ενεργοποιημένο",
+    "Invalid password": "Λάθος password",
+    "Password verification required": "Υποχρεωτική επιβεβαίωση password",
+    "Invalid two-factor authentication code": "Λάθος 2FA κωδικός",
+    "Two-factor authentication required": "Υποχρεωτικός 2FA κωδικός",
+    "noUserData": "Δεν υπάρχουν δεδομένα χρήστη"
+  },
+  "fileActions": {
+    "editFile": "Επεξεργασία αρχείου",
+    "nameLabel": "Ονομα",
+    "namePlaceholder": "Εισάγετε νέο όνομα",
+    "extension": "Επέκταση",
+    "descriptionLabel": "Περιγραφή",
+    "descriptionPlaceholder": "Εισάγετε περιγραφή",
+    "addDescriptionPlaceholder": "Προσθήκη περιγραφής...",
+    "deleteFile": "Διαγραφή αρχείου",
+    "deleteConfirmation": "Να διαγραφεί το αρχείο;",
+    "deleteWarning": "Δεν υπάρχει ανέρεση για αυτή την ενέργεια."
+  },
+  "fileManager": {
+    "downloadError": "Αποτυχία download",
+    "updateSuccess": "Επιτυχής ενημέρωση αρχείου",
+    "updateError": "Αποτυχία ενημέρωσης αρχείου",
+    "deleteSuccess": "Επιτυχής διαγραφή αρχείου",
+    "deleteError": "Αποτυχία διαγραφής αρχείου"
+  },
+  "filePreview": {
+    "title": "Προεπισκόπηση αρχείου",
+    "loading": "Φόρτωση...",
+    "notAvailable": "Αδύνατη προεπισκόπηση για αυτόν τον τύπο αρχείου",
+    "downloadToView": "Κάντε download το αρχείο για να το δείτε",
+    "loadError": "Σφάλμα φόρτωσης προεπισκόπησης",
+    "downloadError": "Σφάλμα download αρχείου",
+    "audioNotSupported": "Ο browser σας δεν υποστηρίζει αναπαραγωγή ήχου",
+    "videoNotSupported": "Ο browser σας δεν υποστηρίζει αναπαραγωγή βίντεο",
+    "pdfPreviewNotAvailable": "Προπισκόπηση PDF μη διαθέσιμη. Δοκιμάστε να το κάνετε download",
+    "tryAlternativeView": "Δοκιμάστε εναλλακτική προβολή",
+    "loadingAlternative": "Φόρτωση εναλλακτικής προβολής...",
+    "loadingAudio": "Φόρτωση ήχου..."
+  },
+  "fileSelector": {
+    "availableFiles": "Διαθέσιμα αρχεία ({count})",
+    "shareFiles": "Αρχεία σε κοινή χρήση ({count})",
+    "shareFilesDescription": "Αρχεία σε αυτήν την κοινή χρήση",
+    "availableFilesDescription": "Προσθέστε αρχεία στην κοινή χρήση",
+    "searchPlaceholder": "Αναζήτηση αρχείων...",
+    "searchSelectedFiles": "Αναζήτηση στα επιλεγμένα αρχεία...",
+    "noMatchingFiles": "Δεν βέθηκαν αρχεία με τα κριτήρια σας",
+    "noAvailableFiles": "Δεν υπάρχουν αρχεία",
+    "noFilesInShare": "΄Δεν υπάρχουν αρχεία σε αυτήν την κοινή χρήση",
+    "noFilesFound": "Δεν βρέθηκαν αρχεία",
+    "noFilesFoundWith": "Δεν βρέθηκαν αρχεία να ταιριάζουν \"{query}\"",
+    "addFilesFromList": "Προσθέστε αρχεία από την παρακάτω λίστα",
+    "tryDifferentSearch": "Δοκιμάστε άλλα κριτήρια αναζήτησης",
+    "allFilesInShare": "Τα αρχεία είναι ηδη στην κοινή χρήση",
+    "uploadNewFiles": "Κάντε Upload νέα αρχεία για να τα προσθέσετε",
+    "fileCount": "{count, plural, =1 {file} από {files}}",
+    "filesSelected": "{count, plural, =0 {Δεν έχουν επιλεγεί αρχεία} =1 {1 αρχείο επίλέχθηκε} other {# αρχεία επιλέχθηκαν}}",
+    "editFile": "Επεξεργασία αρχείου",
+    "previewFile": "Προεπισκόπηση αρχείου",
+    "addToShare": "Προσθήκη στην κοινή χρήση",
+    "removeFromShare": "Αφαίρεση απο την κοινή χρήση",
+    "saveChanges": "Αποθήκευση αλλαγών"
+  },
+  "files": {
+    "title": "Ολα τα αρχεία",
+    "uploadFile": "Upload",
+    "loadError": "Αποτυχία φόρτωσης αρχείων",
+    "pageTitle": "Τα αρχεία μου",
+    "breadcrumb": "Τα αρχεία μου",
+    "downloadStart": "Εναρξη Download",
+    "downloadError": "Αποτυχία download",
+    "updateSuccess": "Επιτυχής ενημέρωση αρχείου",
+    "updateError": "Αποτυχία ενημέρωσης αρχείου",
+    "deleteSuccess": "Επιτυχής διαγραφή αρχείου",
+    "deleteError": "Αποτυχία διαγραφής αρχείου",
+    "bulkDownloadSuccess": "Επιτυχής εναρξη download",
+    "bulkDownloadError": "Αποτυχία δημιουργίας αρχείου ZIP",
+    "bulkDownloadFileError": "Αποτυχία download αρχείου {fileName}",
+    "bulkDeleteSuccess": "{count, plural, =1 {1 αρχείο διαγράφηκε επιτυχώς} other {# αρχεία διαγράφηκαν επιτυχώς}}",
+    "bulkDeleteError": "Αποτυχία διαγραφής επιλεγμένων αρχείων",
+    "bulkDeleteTitle": "Διαγραφη επιλεγμένων αρχείων",
+    "bulkDeleteConfirmation": "Επιβεβαίωση διαγραφής {count, plural, =1 {1 αρχείου} other {# αρχείων}};",
+    "totalFiles": "{count, plural, =0 {χωρίς αρχεία} =1 {1 αρχείο} other {# αρχεία}}",
+    "viewMode": {
+      "table": "Πίνακας",
+      "grid": "Πλέγμα"
+    }
+  },
+  "filesTable": {
+    "ariaLabel": "Πίνακας αρχείων",
+    "selectAll": "Επιλογή όλων",
+    "selectFile": "Επιλογή αρχείου {fileName}",
+    "columns": {
+      "name": "ΟΝΟΜΑ",
+      "description": "ΠΕΡΙΓΡΑΦΗ",
+      "size": "ΜΕΓΕΘΟΣ",
+      "createdAt": "ΔΗΜΙΟΥΡΓΙΑ",
+      "updatedAt": "ΕΝΗΜΕΡΩΣΗ",
+      "actions": "ΕΝΕΡΓΕΙΕΣ"
+    },
+    "actions": {
+      "menu": "ενέργειες αρχείων",
+      "preview": "Προεπισκόπηση",
+      "edit": "Επεξεργασία",
+      "share": "κοινή χρήση",
+      "download": "Download",
+      "delete": "Διαγραφή"
+    },
+    "bulkActions": {
+      "selected": "{count, plural, =1 {1 αρχείο επιλέχθηκε} other {# αρχεία επιλέχθηκαν}}",
+      "actions": "ενέργειες",
+      "download": "Download επιλεγμένων",
+      "share": "Κοινή χρήση επιλεγμένων",
+      "delete": "Διαγραφή επιλεγμένων"
+    }
+  },
+  "footer": {
+    "poweredBy": "Powered by",
+    "kyanHomepage": "Kyantech homepage"
+  },
+  "forgotPassword": {
+    "emailLabel": "Διεύθυνση email",
+    "emailPlaceholder": "Εισάγετε το email σας",
+    "sending": "Αποστολή...",
+    "submit": "Αποστολή οδηγιών επαναφοράς password",
+    "backToLogin": "Πίσω στο Login",
+    "title": "Ξέχασα το password μου",
+    "description": "Εισάγετε την διεύθυνση email σας για να λάβετε τις οδηγίες επαναφοράς password",
+    "resetInstructions": "Οι οδηγίες επαναφοράς password στάλθηκαν στο email σας",
+    "pageTitle": "Forgot Password",
+    "passwordAuthDisabled": "Η είσοδος με password είναι ανενεργή. Επικοινωνήστε με τον διαχειριστή ή δοκιμάστε πάροχο SSO."
+  },
+  "generateShareLink": {
+    "generateTitle": "Δημιουργία link κοινής χρήσης",
+    "updateTitle": "Ενημέρωση Link κοινής χρήσης",
+    "generateDescription": "Δημιουργία εξατομικευμένου link. Κάντε το URL πιό εύκολο να το θυμάστε.",
+    "updateDescription": "Ενημέρωση εξατομικευμένου link. Κάντε το URL πιό εύκολο να το θυμάστε.",
+    "aliasPlaceholder": "Εξατομικευμένο ID για το link",
+    "linkReady": "Το link της κοινής σας χρήσης είναι έτοιμο. Μπορείτε να το αντιγράψετε.",
+    "readyDescription": "Το link της κοινής σας χρήσης είναι έτοιμο. Μπορείτε να κάνετε scan το QR Code, να το κατεβάσετε για να το χρησιμοποιήσετε αργότερα, ή να αντιγράψετε το παρακάτω link.",
+    "generateButton": "Δημιουργία link",
+    "updateButton": "Ενημέρωση link",
+    "copyButton": "Αντιγραφή link",
+    "success": "Το link δημιουργήθηκε με επιτυχία",
+    "error": "Απέτυχε η δημιουργία νεου link",
+    "copied": "Το link έγινε αντιγραφή",
+    "tabs": {
+      "link": "Link",
+      "qrcode": "QR Code"
+    }
+  },
+  "home": {
+    "description": "Open-source πλατφόρμα αποστολής αρχείων. Ασφαλή κοινοποίηση αρχείων, χωρίς όρια.",
+    "documentation": "Οδηγός χρήσης",
+    "starOnGithub": "Star on GitHub",
+    "privacyMessage": "100% Ιδιωτικότητα. Τα αρχεία είναι προσβάσιμα μόνο από όσους έχουν λάβει το link.",
+    "header": {
+      "fileSharing": "Κοινή χρήση αρχείων",
+      "tagline": "Εύκολα και χωρίς κόστος"
+    },
+    "pageTitle": "Αρχική"
+  },
+  "iconPicker": {
+    "title": "Επιλογή εικονίδιου",
+    "placeholder": "Επιλέξτε ενα εικονίδιο",
+    "searchPlaceholder": "Αναζήτηση εικονίδιου...",
+    "loadingMore": "Φόρτωση περισσότερων εικονιδίων...",
+    "allIconsLoaded": "Ολα τα {count} εικονίδια φορτώθηκαν",
+    "noIconsFound": "Δεν βρέθηκαν εικονίδια με κριτήριο \"{search}\"",
+    "tabs": {
+      "all": "Όλα τα εικονίδια",
+      "popular": "δημοφιλή",
+      "auth": "Πάροχοι εξουσιοδότησης"
+    },
+    "stats": "{iconCount} εικονίδια από {libraryCount} βιβλιοθήκες",
+    "categoryBadge": "{category} ({count} εικοίδια)"
+  },
+  "imageEdit": {
+    "title": "Επεξεργασία εικόνας",
+    "rotate": "Περιστροφή",
+    "zoom": "Ζούμ",
+    "cropInstructions": "Σύρετε για αλλαγή θέσης, αλλάξτε το μέγεθος των γωνιών για να προσαρμόσετε την περιοχή"
+  },
+  "login": {
+    "welcome": "Καλωσήρθατε στο",
+    "signInToContinue": "Συνδεθείτε για να συνεχίσετε",
+    "emailOrUsernameLabel": "Email ή Username",
+    "emailOrUsernamePlaceholder": "Εισάγετε το email ή το username σας",
+    "emailLabel": "Διεύθυνση email",
+    "emailPlaceholder": "Εισαγετε το email σας",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Εισάγετε το password σας",
+    "signIn": "Σύνδεση",
+    "signingIn": "Σύνδεση...",
+    "forgotPassword": "Ξέχασα το password μου!",
+    "pageTitle": "Σύνδεση",
+    "or": "ή",
+    "continueWithSSO": "Συνέχεια με SSO",
+    "processing": "Επεξεργασία εξουσιοδότησης..."
+  },
+  "logo": {
+    "labels": {
+      "appLogo": "Λογότυπο εφαρμογής"
+    },
+    "buttons": {
+      "upload": "Upload λογότυπου",
+      "remove": "Διαγραφή λογότυπου"
+    },
+    "messages": {
+      "uploadSuccess": "Το λογότυπο έγινε upload επιτυχώς",
+      "removeSuccess": "Το λογότυπο διαγράφηκε"
+    },
+    "errors": {
+      "uploadFailed": "Αποτυχία upload λογότυπου",
+      "removeFailed": "Αποτυχία διαγραφής λογότυπου"
+    }
+  },
+  "navbar": {
+    "logoAlt": "Λογότυπο εφαρμογής",
+    "profileMenu": "Μενού προφίλ",
+    "profile": "Προφίλ",
+    "customization": "Εξατομίκευση",
+    "settings": "Ρυθμίσεις",
+    "usersManagement": "Διαχείριση χρηστών",
+    "logout": "Αποσύνδεση"
+  },
+  "navigation": {
+    "dashboard": "Πίνακας ελέγχου"
+  },
+  "notifications": {
+    "permissionGranted": "Οι ειδοποιήσεις download είναι ενεργές",
+    "permissionDenied": "Οι ειδοποιήσεις download απενεργοποιήθηκαν",
+    "downloadComplete": {
+      "title": "Το download ολοκληρώθηκε",
+      "body": "{fileName} ολοκλήρωση download"
+    },
+    "downloadFailed": {
+      "title": "Aποτυχία download",
+      "body": "Απέτυψε το download του {fileName}: {error}",
+      "unknownError": "Αγνωστο σφάλμα"
+    },
+    "queueProcessing": {
+      "title": "Εκκίνηση download",
+      "body": "Το {fileName} γίνεται download {position}ο",
+      "position": " (ήταν #{position} στην ουρά download)"
+    }
+  },
+  "profile": {
+    "password": {
+      "title": "Αλλαγή password",
+      "newPassword": "Νέο password",
+      "confirmPassword": "Επιβεβαίωση νέου password",
+      "updateButton": "Ενημέρωση password"
+    },
+    "form": {
+      "title": "Πληροφορίες προφίλ",
+      "firstName": "Όνομα",
+      "lastName": "Επώνυμο",
+      "username": "Username",
+      "email": "Email",
+      "updateButton": "Ενημέρωση προφίλ"
+    },
+    "header": {
+      "title": "Προφίλ",
+      "subtitle": "Διαχείριση πληροφοριών προφιλ και password"
+    },
+    "picture": {
+      "title": "Εικόνα προφίλ",
+      "description": "Κάντε κλικ στο εικονίδιο της κάμερας για να αλλάξετε εικόνα προφίλ",
+      "uploadPhoto": "Upload εικόνας",
+      "removePhoto": "Διαγραφή εικόνας"
+    },
+    "errors": {
+      "loadFailed": "Αποτυχίας φόρτωσης δεδομένων χρήση",
+      "updateFailed": "Αποτυχία ενημέρωσης προφίλ",
+      "passwordFailed": "Αποτυχία ενημέρωσης password",
+      "imageFailed": "Αποτυχία ενημέρωσης εικόνας προφίλ",
+      "imageRemoveFailed": "Αποτυχία διαγραφής εικόνας προφίλ"
+    },
+    "messages": {
+      "noChanges": "Δεν υπάρχουν αλλαγές για αποθήκευση",
+      "updateSuccess": "Επιτυχής ενημέρωση προφίλ",
+      "fillPasswords": "Συμπληρώστε και τα δύο πεδία password",
+      "passwordSuccess": "Επιτυχής ενημέρωση password",
+      "imageSuccess": "Επιτυχής ενημέρωση εικόνας προφίλ",
+      "imageRemoved": "Επιτυχής διαγραφή εικόνας προφίλ"
+    },
+    "pageTitle": "Profile"
+  },
+  "qrCodeModal": {
+    "title": "QR Code κοινής χρήσης",
+    "description": "Από αυτο το QR code αποκτάτε πρόσβαση στην κοινή χρήση.",
+    "download": "Download QR Code"
+  },
+  "quickAccess": {
+    "files": {
+      "title": "Τα αρχεία μου",
+      "description": "Πρόσβαση και διαχείριση των upload σας"
+    },
+    "shares": {
+      "title": "Οι κοινές χρήσεις μου",
+      "description": "Προβολή και διαχείριση των κοινών χρήσεων μου"
+    },
+    "reverseShares": {
+      "title": "Λήψη αρχείων",
+      "description": "Δημιουργία link αποστολής αρχείων απο τρίτους"
+    }
+  },
+  "recentFiles": {
+    "title": "Πρόσφατα upload",
+    "viewAll": "Προβολη όλων",
+    "upload": "Upload",
+    "uploadFile": "Upload αρχείου",
+    "noFiles": "Δεν έχουν γίνει upload αρχεία ακόμα"
+  },
+  "recentShares": {
+    "title": "Πρόσφατες κοινές χρήσεις",
+    "viewAll": "Προβολη όλων",
+    "createShare": "Δημιουργία κοινής χρήσης",
+    "noShares": "Δεν έχουν δημιουργηθεί κοινές χρήσεις ακόμα",
+    "createFirst": "Δημιουργήστε την πρώτη κοινή χρήση σας"
+  },
+  "recipientSelector": {
+    "emailPlaceholder": "Email παραλήπτη",
+    "add": "προσθήκη",
+    "recipients": "Παραλήπτες ({count})",
+    "notifyAll": "Ειδοποίηση όλων",
+    "noRecipients": "Δεν έχουν προστεθεί παραλήπτες ακόμα",
+    "addSuccess": "Επιτυχής προσθήκη παραλήπτη",
+    "addError": "Αποτυχία προσθήκης παραλήπτη",
+    "removeSuccess": "Επιτυχής διαγραφή παραλήπτη",
+    "removeError": "Αποτυχία διαγραφής παραλήπτη",
+    "sendingNotifications": "Αποστολή ειδοποιήσεων...",
+    "notifySuccess": "Επιτυχία ειδοποιήσεων παραληπτών",
+    "notifyError": "Αποτυχία ειδοποιήσεων παραληπτών",
+    "selectAll": "Επιλογή όλων",
+    "selectedCount": "{count} επιλέχθηκαν",
+    "selectRecipient": "Επιλογή {email}",
+    "notifySelected": "επιλέχθηκε να ειδοποιηθεί",
+    "removeSelected": "Διαγραφή επιλεγμένου",
+    "notifySingle": "Ειδοποίηση του παραλήπτη",
+    "removeSingle": "Διαγραφή του παραλήπτη",
+    "bulkRemoveSuccess": "{count} ΄παραλήπτες διαγράφηκαν",
+    "bulkRemoveError": "Αποτυχία διαγραφής παραλήπτών",
+    "bulkNotifySuccess": "Επιτυχής αποστολή ειδοποιήσεων σε {count} παραλήπτες",
+    "bulkNotifyError": "Αποτυχία αποστολής ειδοποιήσεων",
+    "singleNotifySuccess": "Αποστολή ειδοποίησης στο {email}",
+    "singleNotifyError": "Αποτυχία αποστολής ειδοποίησης",
+    "modalDescription": "Προσθήκη και διαχείρηση παραληπτών για αυτή την κόινή χρήση. Λειτουργεί αν έχει γίνει ρύθμιση του SMTP.",
+    "addRecipient": "Προσθήκη παραλήπτη",
+    "invalidEmail": "Εισάγετε μια έγκυρη διεύθυνση email",
+    "duplicateEmail": "Ο παραλήπτης υπάρχει ήδη",
+    "noRecipientsDescription": "Προσθέστε παραλήπτες να λάβουν αυτή την κοινή χρήση μεσω email"
+  },
+  "register": {
+    "validation": {
+      "firstNameRequired": "Το όνομα είναι υποχρεωτικό",
+      "lastNameRequired": "Το επώνυμο είναι υποχρεωτικό",
+      "usernameMinLength": "Το Username πρέπει να περιέχει τουλάχιστον 3 χαρακτήρες",
+      "invalidEmail": "Άκυρο email!",
+      "passwordMinLength": "Το passwod πρέπει να περιέχει τουλάχιστον 8 χαρακτήρες",
+      "success": "Επιτυχής δημιουργία λογαριασμού διαχειριστή.",
+      "error": "Αποτυχία δημιουργίας λογαριασμού διαχειριστή!"
+    },
+    "labels": {
+      "firstName": "Ονομα",
+      "lastName": "Επώνυμο",
+      "username": "Username",
+      "email": "Email",
+      "password": "Password"
+    },
+    "buttons": {
+      "creating": "Δημιουργία...",
+      "createAdmin": "Δημιουργία λογαριασμού διαχειριστή"
+    }
+  },
+  "resetPassword": {
+    "pageTitle": "Επαναφορά password",
+    "header": {
+      "title": "Επαναφορά password",
+      "description": "Εισαγωγή του νέου password"
+    },
+    "form": {
+      "newPassword": "Νέο Password",
+      "newPasswordPlaceholder": "Εισάγετε το νέο password",
+      "confirmPassword": "Επιβεβαίωση νέου password",
+      "confirmPasswordPlaceholder": "Επιβεβαίωση του νέου password",
+      "resetting": "Γίνετε επαναφορά password...",
+      "submit": "Επαναφορά Password",
+      "backToLogin": "Επιστροφή στην οθόνη σύνδεσης"
+    },
+    "messages": {
+      "success": "Επιτυχία επαναφοράς password"
+    },
+    "errors": {
+      "serverError": "Αποτυχία επαναφοράς password. Παρακαλώ προσπαθήστε ξανά.",
+      "invalidToken": "Αποτυχία επαναφοράς password (token)"
+    }
+  },
+  "reverseShares": {
+    "pageTitle": "Λήψη αρχείων",
+    "search": {
+      "title": "Διαχείρηση link λήψεων",
+      "createButton": "Δημιουργία link",
+      "placeholder": "Αναζήτηση στα link λήψεων...",
+      "results": "Βρέθηκαν {filtered} από {total} link λήψεων"
+    },
+    "labels": {
+      "files": "αρχεία",
+      "size": "μέγεθος",
+      "status": "κατάσταση",
+      "access": "πρόσβαση",
+      "description": "περιγραφή",
+      "pageLayout": "Διάταξη σελίδας",
+      "security": "Ασφάλεια & Κατάσταση",
+      "limits": "Ορια",
+      "maxFiles": "Μέγιστα αρχεία",
+      "maxFileSize": "Μέγιστο μέγεθος",
+      "allowedTypes": "Επιτρεπόμενοι τύποι",
+      "filesReceived": "Αρχεία λήφθηκαν",
+      "fileLimit": "Οριο αρχείων",
+      "noLimit": "Χωρίς όριο",
+      "noLinkCreated": "Δεν έχει δημιουργηθεί link",
+      "publicAccess": "Δημόσια πρόσβαση",
+      "protectedByPassword": "Προστασία password",
+      "configureProtection": "Κλικ για να ρυθμίσετε την προστασία",
+      "enterPassword": "Εισάγετε password",
+      "thisLinkProtected": "To link αυτό θα προστατευτεί με password",
+      "thisLinkPublic": "Το link αυτό θα είναι δημόσια διαθέσιμο",
+      "configureExpiration": "Ρύθμιση ημερομηνίας λήξης",
+      "configureLimits": "Ρύθμιση ορίων αρχείων",
+      "protectWithPassword": "Προστασία με password",
+      "layoutOptions": {
+        "default": "Προεπιλογή",
+        "wetransfer": "WeTransfer"
+      },
+      "noFilesLimit": "Χωρίς όριο αρχείων",
+      "noSizeLimit": "Χωρίς όριο μεγέθους",
+      "allFileTypes": "Ολοι οι τύποι αρχείων",
+      "fileTypesHelp": "Εισαγετε τύπους με τελέια, χωρισμένους με κενο, κόμμα, παύλα ή pipe",
+      "fieldRequirements": "Απαραίτητα πεδία",
+      "nameFieldRequired": "Πεδίο ονόματος",
+      "emailFieldRequired": "Πεδίο email",
+      "fieldOptions": {
+        "hidden": "Κρυφό",
+        "optional": "Προαιρετικό",
+        "required": "Απαραίτητο"
+      }
+    },
+    "card": {
+      "untitled": "Link χωρίς τίτλο",
+      "noDescription": "Χωρίς περιγραφή",
+      "addDescriptionPlaceholder": "Προσθήκη περιγραφής...",
+      "files": "αρχεία",
+      "progress": "Πρόοδος",
+      "created": "Δημιουργήθηκαν",
+      "expired": "Εληξαν",
+      "expires": "Expires",
+      "viewDetails": "Προβολη λεπτομερειών",
+      "viewQrCode": "Προβολή QR Code",
+      "copyLink": "Αντιγραφή link",
+      "openInNewTab": "Ανοιγμα σε νέα καρτέλα",
+      "editLink": "Επεξεργασία link",
+      "createLink": "Δημιουργία link",
+      "delete": "Διαγραφή",
+      "copyLinkTitle": "Αντιγραφή link",
+      "createLinkCTA": "Δημιουργία link λήψης"
+    },
+    "status": {
+      "active": "Ενεργό",
+      "inactive": "Ανενεργό",
+      "expired": "Εληξε",
+      "protected": "Προστετευμένο",
+      "public": "Δημόσιο"
+    },
+    "actions": {
+      "copyLink": "Αντιγραφή link",
+      "editAlias": "Επεξεργασία ψευδόνυμου",
+      "createAlias": "Δημιουργία ψευδόνυμου",
+      "viewDetails": "Προβολή λεπτομερειών",
+      "edit": "Επεξεργασία",
+      "delete": "Διαγραφή",
+      "viewFiles": "Ληφθέντα αρχεία",
+      "viewQrCode": "Προβολή QR Code"
+    },
+    "empty": {
+      "title": "Δεν υπάρχουν link λήψης αρχείων",
+      "description": "Δημιουργία link λήψης αρχείων.",
+      "createButton": "Δημιουργία πρώτου link"
+    },
+    "modals": {
+      "create": {
+        "title": "Δημιουργία link λήψης",
+        "description": "Διαμόρφωση link λήψης αρχείων από τρίτους"
+      },
+      "edit": {
+        "title": "Επεξεργασία link λήψης",
+        "description": "Ενημέρωση ρυθμίσεων link λήψης",
+        "updating": "Ενημέρωση...",
+        "saveChanges": "Αποθήκευση αλλαγών"
+      },
+      "details": {
+        "title": "Λεπτομέρειες link",
+        "description": "Προβολή και επεξεργασία πληροφοριών link λήψης",
+        "pageLayout": "Διάταξη σελίδας",
+        "linkSection": "Link λήψης",
+        "noLinkCreated": "Δεν υπάρχουν link",
+        "limits": "Ορια",
+        "maxFiles": "Μέγιστος αριθμός αρχείων",
+        "maxFileSize": "Μέγιστο μέγεθος",
+        "allowedTypes": "Επιτρεπόμενοι τύποι αρχείων",
+        "noLimit": "Χωρίς όρια",
+        "security": "Ασφάλεια",
+        "status": "Κατάσταση",
+        "password": "Password",
+        "files": "Ληφθέντα αρχεία",
+        "noFiles": "Δεν έχουν ληφθει αρχεία",
+        "copyLink": "Αντιγραφή Link",
+        "openLink": "Ανοιγμα Link",
+        "editAlias": "Επεξεργασία Alias",
+        "createAlias": "Προσθήκη ψευδόνυμου",
+        "editPassword": "Επεξεργασία προστασίας με password",
+        "basicInfo": "Πληροφορίες",
+        "securityAndStatus": "Κατάσταση και Ασφάλεια",
+        "protection": "Προστασία",
+        "protectedByPassword": "Προστασία με password",
+        "publicAccess": "Δημόσια πρόσβαση",
+        "active": "Ενεργή",
+        "inactive": "Ανενεργή",
+        "deactivate": "Απενεργοποίηση",
+        "activate": "Ενεργοποίηση",
+        "expiration": "Λήξη",
+        "dates": "Ημερομηνίες",
+        "createdAt": "Δημιουργήθηκε την",
+        "updatedAt": "Ενημερώθηκε την",
+        "allTypes": "Ολοι οι τύποι",
+        "placeholderTypes": ".pdf,.jpg,.png (διαχωρισμός με κόμμα)",
+        "downloadSuccess": "Το Download ξεκίνησε",
+        "downloadError": "Σφάλμα download αρχείου",
+        "editSuccess": "Το αρχείο  ενημερώθηκε επιτυχώς",
+        "editError": "Σφάλμα ενημέρωσης αρχείου",
+        "previewNotAvailable": "Αδυναμία προεπισκόπησης",
+        "notAvailable": "Μη διαθέσιμο",
+        "invalidDate": "Λάθος ημερομηνία"
+      },
+      "alias": {
+        "editTitle": "Επεξεργασία ψευδόνυμου link",
+        "createTitle": "Δημιουργία ψευδόνυμου link",
+        "editDescription": "Ενημέρωση ψευδόνυμου link λήψης",
+        "createDescription": "Δημιουργία ψευδόνυμου link λήψης",
+        "aliasLabel": "Ψευδόνυμο link",
+        "aliasPlaceholder": "το-δικό-μου-link",
+        "preview": "Προεπισκόπηση:",
+        "currentLink": "Τρέχων Link:",
+        "copyCurrentLink": "Αντιγραφή τρέχων link",
+        "randomTooltip": "Δημιουργία τυχαίου ψευδόνυμου",
+        "cancel": "Ακυρο",
+        "creating": "Δημιουργία...",
+        "updating": "Ενημέρωση...",
+        "create": "Δημιουργία ψευδόνυμου link",
+        "update": "Ενημέρωση ψευδόνυμου link",
+        "validation": {
+          "required": "Το ψευδόνυμο είναι υποχρεωτικό",
+          "minLength": "Το ψευδόνυμο πρέπει να περιέχει τουλάχιστον 3 χαρακτήρες",
+          "maxLength": "Το ψευδόνυμο πρέπει να περιέχει μέχρι 50 χαρακτήρες",
+          "pattern": "Το ψευδόνυμο μπορεί να αποτελείται μόνο από γράμματα, αριθμούς, παύλες και κάτω παύλες"
+        },
+        "help": "3-50 χαρακτήρες. Τα κενά μετατρέπονται αυτόματα σε παύλες."
+      },
+      "password": {
+        "title": "Επεξεργασία προστασίας με password",
+        "description": "Ρυθμίστε την προστασία για αυτό το link",
+        "hasPassword": "Προσ με password",
+        "password": "Password",
+        "cancel": "Ακυρο",
+        "save": "Αποθήκευση",
+        "saving": "Αποθήκευση..."
+      },
+      "receivedFiles": {
+        "title": "Ληφθέντα αρχεία",
+        "description": "Προβολή και επεξεργασία αρχείων αυτού του link",
+        "noFiles": "Δεν έχουν ληφθεί αρχεία",
+        "noFilesDescription": "Τα αρχεία που έχουν αποσταλεί σε αυτό το link θα φανούν εδώ",
+        "fileCount": "{count, plural, =0 {Κανένα αρχείο} =1 {ένα αρχέιο} other {# αρχεία}}",
+        "invalidDate": "Λάθος ημερομηνία",
+        "totalSize": "Συνολικό μέγεθος: {size}",
+        "columns": {
+          "file": "Αρχείο",
+          "size": "Μέγεθος",
+          "sender": "Αποστολή από",
+          "date": "Ημερομηνία",
+          "actions": "Ενέργειες"
+        },
+        "actions": {
+          "preview": "Προεπισκόπηση",
+          "download": "Download",
+          "copyToMyFiles": "Αντιγραφή στα αρχεία μου",
+          "copying": "Αντιγραφή..."
+        },
+        "uploadedBy": "Upload από τον {name}",
+        "anonymous": "Ανώνυμο",
+        "downloadSuccess": "Εναρξη Download",
+        "downloadError": "Σφάλμα download",
+        "editSuccess": "Το αρχείο ενημερώθηκε επιτυχώς",
+        "editError": "Σφάλμα ενημέρωσης αρχείου",
+        "previewNotAvailable": "Μη διαθέσιμη προεπισκόπηση",
+        "copySuccess": "Το αρχείο έγινε αντιγραφή στα αρχεία σας",
+        "copyError": "Σφάλμα αντιγραφής αρχείου στα αρχεία σας",
+        "deleteSuccess": "Επιτυχής διαγραφή αρχείου",
+        "deleteError": "Σφάλμα διαγραφής αρχείου",
+        "bulkCopySuccess": "{count, plural, =1 {ένα αρχείο αντιγράφηκε επιτυχώς} other {# αρχεία αντιγράφηκαν επιτυχώς}}",
+        "bulkDeleteSuccess": "{count, plural, =1 {ένα αρχείο διαγράφηκε επιτυχώς} other {# αρχεία διαγράφηκαν επιτυχώς}}",
+        "bulkCopyProgress": "Αντιγραφή {count, plural, =1 {ένος αρχείου} other {# αρχείων}} στα αρχεία σας...",
+        "bulkDeleteProgress": "Διαγραφή {count, plural, =1 {ένος αρχείου} other {# αρχείων}}...",
+        "bulkDeleteConfirmTitle": "Διαγραφή επιλεγμένων αρχείων",
+        "bulkDeleteConfirmMessage": "Θέλετε σίγουρα να διαγράψετε {count, plural, =1 {το αρχείο} other {τα # αρχεία}}? Δεν μπορεί να γίνει αναίρεση.",
+        "bulkDeleteConfirmButton": "Διαγραφή {count, plural, =1 {Αρχείου} other {Αρχείων}}",
+        "bulkActions": {
+          "selected": "{count, plural, =1 {1 αρχείο επιλέχθηκε} other {# αρχεία επιλέχθηκαν}}",
+          "actions": "Ενέργειες",
+          "download": "Download επιλεγμένων",
+          "copyToMyFiles": "Αντιγραφή επιλεγμένων στα αρχεία μου",
+          "delete": "Διαγραφή επιλεγμένων"
+        },
+        "selectAll": "Επιλογή όλων",
+        "selectFile": "Επιλογή αρχείου {fileName}",
+        "copyErrors": {
+          "timeout": "Λήξη χρόνου αναμονής. ΠΑρακαλώ δοκιμάστε μικρότερο αρχείο ή ελέγξτε την σύνδεση σας.",
+          "failed": "Η αντιγραφή απέτυχε. Παρακαλώ δοκιμάστε ξανά.",
+          "aborted": "Η αντιγραφή ακυρώθηκε λόγω του μεγάλου χρόνου αναμονής."
+        }
+      }
+    },
+    "form": {
+      "name": {
+        "label": "Ονομα Link",
+        "placeholder": "π.χ.: Project Documents, Family Photos..."
+      },
+      "description": {
+        "label": "Περιγραφή",
+        "placeholder": "Περιγράψτε τι τύπου αρχεία αναμένετε να λάβετε...",
+        "description": "Προαιρετικό. Βοηθάει τους χρήστες να καταλάβουν τι να γράψουν."
+      },
+      "status": {
+        "label": "Κατάσταση Link",
+        "description": "Ενεργοποίηση ή Απενεργοποίηση του link λήψης"
+      },
+      "expiration": {
+        "label": "Ημερομηνία λήξης",
+        "description": "Προαιρετικό. Το link θα απενεργοποιηθεί την ημερομηνία.",
+        "configure": "Ρύθμιση λήξης"
+      },
+      "fileLimits": {
+        "configure": "Ρύθμιση ορίων αρχείου"
+      },
+      "maxFiles": {
+        "label": "Μέγιστος αριθμός αρχείων",
+        "placeholder": "π.χ.: 10",
+        "description": "Προαιρετικό. Ρύθμιση του πλήθους των αρχείων που θα αποσταλούν.",
+        "noLimit": "Χωρίς όριο"
+      },
+      "maxFileSize": {
+        "label": "Μέγιστο μέγεθος αρχείου",
+        "placeholder": "π.χ.: 100",
+        "description": "Προαιρετικό. Περιόρίστε το μέγεθος του κάθε αρχείου.",
+        "noLimit": "Χωρίς όριο μεγέθους"
+      },
+      "allowedFileTypes": {
+        "label": "Επιτρεπόμενοι τύποι αρχείων",
+        "placeholder": "π.χ.: pdf, jpg, png, docx",
+        "description": "Πληκρολογήστε επεκτάσεις αρχείων χωρισμένες με κενό, κόμμα, παύλα ή όρθια παύλα",
+        "allTypes": "Όλοι οι τύποι αρχείων"
+      },
+      "pageLayout": {
+        "label": "Διάταξη σελίδας",
+        "placeholder": "Επιλέξτε Διάταξη",
+        "description": "Πως θα εμφανίζετε η σελίδα upload στους χρήστες.",
+        "options": {
+          "default": "Προεπιλεγμένη διάταξη",
+          "wetransfer": "Στυλ WeTransfer"
+        }
+      },
+      "password": {
+        "label": "Password προστασίας",
+        "placeholder": "Προαιρετικό. Προσθέστε password για να προστατευτεί το link",
+        "description": "Προαιρετικό. Οι χρήστες θα χρειαστούν το password για να ανοίξουν το link.",
+        "configurePassword": "Ρύθμιση Password",
+        "protectWithPassword": "Προστασία με password",
+        "passwordHelp": "To Password πρεπεί να περιέχει τουλάχιστον 4 χαρακτήρες",
+        "passwordPlaceholder": "Εισάγετε password για να προστατέψετε το link"
+      },
+      "nameFieldRequired": {
+        "label": "Ρυθμίσεις ονόματος",
+        "description": "Επιλέξτε αν το όνομα του uploader είναι απαραίτητο και αν πρέπει να είναι ορατό"
+      },
+      "emailFieldRequired": {
+        "label": "Ρυθμίσεις email",
+        "description": "Επιλέξτε αν το email του uploader είναι απαραίτητο και αν πρέπει να είναι ορατό"
+      },
+      "fieldRequirements": {
+        "title": "Ρυθμίσεις πεδίων",
+        "description": "Επιλέξτε ποιά πεδιά πρέπει να είναι ορατά στην οθόνη upload"
+      },
+      "submit": "Δημιουργία link λήψης"
+    },
+    "messages": {
+      "created": "Το link λήψης δημιουργήθηκε με επιτυχία!",
+      "createSuccess": "Επιτυχής δημιουργία link λήψης!",
+      "updateSuccess": "Επιτυχής ενημέρωση link λήψης!",
+      "linkCopied": "Το link αντιγράφηκε!",
+      "deleteSuccess": "Το link λήψης διαγράφηκε με επιτυχία!",
+      "aliasCreated": "Επιτυχής δημιουργία ψευδόνυμου!",
+      "activateSuccess": "Το link λήψης ενεργοποιήθηκε επιτυχώς!",
+      "deactivateSuccess": "Το link λήψης απενεργοποιήθηκε επιτυχώς!",
+      "passwordProtectionEnabled": "Η προστασία με password ενεργοποιήθηκε επιτυχώς!",
+      "passwordProtectionDisabled": "Η προστασία με password απενεργοποιήθηκε επιτυχώς!"
+    },
+    "defaultLinkName": "Ληφθέντα αρχεία",
+    "errors": {
+      "loadFailed": "Αποτυχία φόρτωσης link λήψης",
+      "createFailed": "Αποτυχία δημιουργίας link λήψης. Δοκιμάστε ξανά.",
+      "updateFailed": "Αποτυχία ενημέρωσης link λήψης. Δοκιμάστε ξανά.",
+      "deleteFailed": "Αποτυχία διαγραφής link λήψης. Δοκιμάστε ξανά.",
+      "aliasCreateFailed": "Αποτυχία δημιουργίας ψευδόνυμου. Δοκιμάστε ξανά..",
+      "passwordUpdateFailed": "Αποτυχία ενημέρωσης προστασίας με password"
+    },
+    "delete": {
+      "title": "Διαγραφή link λήψης",
+      "description": "Αυτή η ενέργεια δεν μπορεί να αναιρεθεί. Το link θα διαγραφεί και δεν θα μπορείτε να λάβετε αρχεία πλεόν.",
+      "confirmButton": "Διαγραφή Link",
+      "cancelButton": "Ακύρωση",
+      "deleting": "Διαγραφή..."
+    },
+    "upload": {
+      "metadata": {
+        "title": "Αποστολή αρχείων - Palmr",
+        "description": "Στείλτε αρχεία μέσω του κοινόχρηστου linl"
+      },
+      "layout": {
+        "defaultTitle": "Αποστολή αρχείων",
+        "importantInfo": "Σημαντική ενημέρωση:",
+        "maxFiles": "Μέγιστο πλήθος αρχείων: {count}",
+        "maxFileSize": "Μέγιστο μέγεθος αρχείου: {size}MB",
+        "allowedTypes": "Επιτρεπόμενοι τύποι: {types}",
+        "loading": "Φόρτωση..."
+      },
+      "password": {
+        "title": "Προστατευμένο link",
+        "description": "Το link έχει προστασία password. Εισάγετε password για να συνεχίσετε.",
+        "label": "Password",
+        "placeholder": "Εισαγετε password",
+        "cancel": "Ακυρο",
+        "submit": "Συνέχεια",
+        "verifying": "Επιβεβαίωση..."
+      },
+      "errors": {
+        "loadFailed": "Αποτυχία φόρτωσης πληροφοριών. Δοκιμάστε ξανά.",
+        "passwordIncorrect": "Λάθος password. Δοκιμάστε ξανά.",
+        "linkNotFound": "Το link δεν βρέθηκε ή έχει λήξει.",
+        "linkInactive": "Το link είναι ανενεργό.",
+        "linkExpired": "Το link έχει λήξει.",
+        "uploadFailed": "Σφάλμα upload αρχείου",
+        "retry": "Ξαναδοκιμάστε",
+        "fileTooLarge": "Πολύ μεγάλο αρχείο. Μέγιστο μέγεθος: {maxSize}",
+        "fileTypeNotAllowed": "Ο τύπος αρχείου δεν είναι αποδεκτος. Αποδεκτοι τύποι: {allowedTypes}",
+        "maxFilesExceeded": "Μέγιστο πλήθος {maxFiles} αρχείων είναι επιτρεπτό",
+        "selectAtLeastOneFile": "Επιλέξτε τουλάχιστον ένα αρχείο",
+        "provideNameOrEmail": "ΠΑρακαλώ Εισάγετε το όνομα ή το email σας",
+        "provideNameRequired": "Το όνομα είναι απαραίτητο",
+        "provideEmailRequired": "Η διεύθυνση email είναι απαραίτητη"
+      },
+      "fileDropzone": {
+        "dragActive": "Σύρετε αρχεία εδώ",
+        "dragInactive": "Σύρετε αρχεία εδώ ή κάντε κλικ για να επιλέξετε",
+        "acceptedTypes": "Αποδεκτοί τύποι: {types}",
+        "maxFileSize": "Μέγιστο μέγεθος αρχείου: {size}",
+        "maxFiles": "Μέγιστο πλήθος {count} αρχείων",
+        "remainingFiles": "{remaining} από {max} αρχεία απομένουν"
+      },
+      "fileList": {
+        "title": "Επιλεγμένα αρχεία:",
+        "statusUploaded": "Uploaded",
+        "statusError": "Σφάλμα",
+        "retry": "Ξαναδοκιμάστε"
+      },
+      "form": {
+        "nameLabel": "Ονομα",
+        "nameLabelOptional": "Ονομα (προαιρετικό)",
+        "namePlaceholder": "Το όνομά σας",
+        "emailLabel": "Email",
+        "emailLabelOptional": "Email (προαιρετικό)",
+        "emailPlaceholder": "your@email.com",
+        "descriptionLabel": "Περιγραφή (προαιρετικό)",
+        "descriptionPlaceholder": "Προσθέστε περιγραφή στα αρχεία...",
+        "uploadButton": "Αποστολή {count} αρχείων",
+        "uploading": "Αποστολή..."
+      },
+      "success": {
+        "title": "Η αποστολή ολοκληρώθηκε! 🎉",
+        "description": "Μπορείτε να κλείσετε αυτή τη σελίδα.",
+        "countMessage": "Η αποστολή {count} αρχείων ολοκληρώθηκε με επιτυχία!"
+      },
+      "maxFilesReached": {
+        "title": "Οριο πλήθους αρχείων",
+        "description": "Το link περιέχει ήδη το μέγιστο πλήθος των {maxFiles} αρχείων που επιτρέπεται.",
+        "contactOwner": "Αν υπάρχει σφάλμα ή θέλετε να στείλετε περισσότερα επικοινωνήστε με τον διαχειριστή του link"
+      },
+      "linkInactive": {
+        "title": "Ανενεργό link",
+        "description": "Αυτό το link λήψης είναι προσωρινά ανενεργό.",
+        "contactOwner": "Επικοινωνήστε με τον διαχειριστή του link."
+      },
+      "linkNotFound": {
+        "title": "Δεν βρεέθηκε το link",
+        "description": "Το link αυτό έχει αφαιρεθεί ή δεν υπάρχει."
+      },
+      "linkExpired": {
+        "title": "Το link έχει λήξει",
+        "description": "Το link έχει λήξει και δεν δέχεται αρχεία.",
+        "contactOwner": "Επικοινωνήστε με τον διαχειριστή του link."
+      }
+    },
+    "components": {
+      "fileRow": {
+        "addDescription": "Προσθήκη περιγραφής...",
+        "anonymous": "Ανώνυμος"
+      },
+      "fileActions": {
+        "edit": "Επεξεργασία",
+        "preview": "Προεπισκόπηση",
+        "download": "Download",
+        "delete": "Διαγραφή",
+        "copyToMyFiles": "Αντιγραφή στα αχεία μου",
+        "copying": "Αντιγραφή..."
+      },
+      "editField": {
+        "saveChanges": "Αποθήκευση αλλαγών",
+        "cancelEdit": "Ακύρωση επεξεργασίας"
+      }
+    }
+  },
+  "searchBar": {
+    "placeholder": "Εύρεση αρχείων...",
+    "results": "βρεέθηκαν {filtered} από {total} αρχεία"
+  },
+  "settings": {
+    "groups": {
+      "defaultDescription": "Επιλογές ρύθμισης",
+      "general": {
+        "title": "Γενικές",
+        "description": "Βασικές ρυθμίσεις εφαρμογής"
+      },
+      "email": {
+        "title": "Email",
+        "description": "Ρυθμίσεις email server"
+      },
+      "security": {
+        "title": "Ασφάλεια",
+        "description": "Ασφάλεια και αυθεντικοποίηση"
+      },
+      "storage": {
+        "title": "Χώρος αποθήκευσης",
+        "description": "Ρύθμιση χώρου αποθήκευσης"
+      },
+      "oidc": {
+        "title": "OpenID Connect (SSO)",
+        "description": "Ρύθμιση αυθεντικοποίησης SSO μέσω OpenID Connect"
+      }
+    },
+    "fields": {
+      "noDescription": "Δεν υπάρχει διαθέσιμη περιγραφή",
+      "appLogo": {
+        "title": "Λογότυπο εφαρμογής",
+        "description": "Αρχείο εικόνας λογότυπου εφαρμογής"
+      },
+      "appName": {
+        "title": "Ονομα εφαρμογής",
+        "description": "Το όνομα εφαρμογής που θα εμφανίζεται στους χρήστες"
+      },
+      "appDescription": {
+        "title": "Περιγραφή εφαρμογής",
+        "description": "Σύντομη περιγραφή της εφαρμογής"
+      },
+      "showHomePage": {
+        "title": "Προβολή αρχικής σελίδας",
+        "description": "Προβολή αρχικής σελίδας μετά την εγκατάσταση"
+      },
+      "smtpEnabled": {
+        "title": "Ενεργοποίηση SMTP",
+        "description": "Ενεργοποίηση ή απενεργοποίηση πρωτόκολλου SMTP email"
+      },
+      "smtpHost": {
+        "title": "SMTP Server",
+        "description": "Διεύθυνση SMTP server"
+      },
+      "smtpPort": {
+        "title": "SMTP Port",
+        "description": "Πόρτα SMTP server"
+      },
+      "smtpUser": {
+        "title": "SMTP Username",
+        "description": "Ονομα χρήστη για αυθεντικοποίηση SMTP"
+      },
+      "smtpPass": {
+        "title": "SMTP Password",
+        "description": "Password για αυθεντικοποίηση SMTP"
+      },
+      "smtpFromName": {
+        "title": "Ονομα αποστολέα",
+        "description": "Το όνομα του αποστολέα που θα φαίνεται στα email που αποστέλονται από την εφαρμογή"
+      },
+      "smtpFromEmail": {
+        "title": "Email Αποστολέα",
+        "description": "Διεύθυνση email του αποστολέα"
+      },
+      "smtpSecure": {
+        "title": "Ασφάλεια σύνδεσης",
+        "description": "Μέθοδος σύνδεσης SMTP - Αυτόματα (προτείνεται), SSL, STARTTLS, ή Χωρίς ασφάλεια",
+        "options": {
+          "auto": "Αυτόματα (προτείνεται)",
+          "ssl": "SSL (Port 465)",
+          "tls": "STARTTLS (Port 587)",
+          "none": "Χωρίς ασφάλεια"
+        }
+      },
+      "smtpNoAuth": {
+        "title": "Χωρίς αυθεντικοποίηση",
+        "description": "Επιλογή για εσωτερικού δικτύου servers που δεν είναι απαραίτητα τα username/password για ασφάλεια"
+      },
+      "smtpTrustSelfSigned": {
+        "title": "Trust Self-Signed Certificates",
+        "description": "Enable this to trust self-signed SSL/TLS certificates (χρήσιμο σε περιβάλλοντα ανάπτυξης της εφαρμογής)"
+      },
+      "testSmtp": {
+        "title": "Δοκιμή σύνδεσης SMTP",
+        "description": "Δοκιμάστε αν η ρύθμιση SMTP είναι σωστή"
+      },
+      "maxLoginAttempts": {
+        "title": "Eπιτρεπόμενο πλήθος login",
+        "description": "Μέγιστος επιτρεπόμενο πλήθος προσπαθιών login πριν κλειδώσει η εφαρμογή"
+      },
+      "loginBlockDuration": {
+        "title": "Διάρκεια κλειδώματος εφαρμογής",
+        "description": "Διάρκεια (σε δευτερόλεπτα) που θα μείνει κλειδωμένη η εφαρμογή"
+      },
+      "passwordMinLength": {
+        "title": "Ελάχιστο μήκος password",
+        "description": "Ελάχιστος αριθμός χαρακτήρων του password"
+      },
+      "passwordResetTokenExpiration": {
+        "title": "Λήξη συνεδρίας",
+        "description": "Χρόνος (σε δευτερόλεπτα) για να λήξει η συνεδρία"
+      },
+      "maxFileSize": {
+        "title": "Μέγιστο μέγεθος αρχείου",
+        "description": "Μέγιστο επιτρεπόμενο μέγεθος αρχείου για upload"
+      },
+      "maxTotalStoragePerUser": {
+        "title": "Μέγιστος χώρος αποθήκευσης ανα χρήστη",
+        "description": "Όριο χώρου αποθήκευσης ανα χρήστη"
+      },
+      "firstUserAccess": {
+        "title": "Πρώτη είσοδος χρήστη",
+        "description": "Ρυθμιση πρώτης ειδόδου νέου χρήστη"
+      },
+      "serverUrl": {
+        "title": "Server URL",
+        "description": "URL του server της εφαρμογής Palmr (π.χ.: https://palmr.example.com)"
+      },
+      "passwordAuthEnabled": {
+        "title": "Χρήση password",
+        "description": "Ενεργοποίηση ή απενεργοποίηση χρήσης password"
+      }
+    },
+    "buttons": {
+      "save": "Αποθήκευση {group}",
+      "testSmtp": "Δοκιμή σύνδεσης",
+      "testing": "Δοκιμή..."
+    },
+    "errors": {
+      "loadFailed": "Αποτυχία φόρτωσης ρυθμίσεων",
+      "updateFailed": "Αποτυχία ενημέρωσης ρυθμίσεων",
+      "passwordAuthRequiresProvider": "Δεν μπορεί να απενεργοποιηθεί το password χωρίς να υπάρχει τουλάχιστον ένας πάροχος αυθεντικοποίησης"
+    },
+    "messages": {
+      "noChanges": "Δεν υπάρχουν αλλαγές να αποθηκευτούν",
+      "updateSuccess": "{group} Επιτυχής αποθήκευση ρυθμίσεων",
+      "smtpTestSuccess": "Σύνδεση SMTP Επιτυχής! Το email λειτουργεί επιτυχώς.",
+      "smtpTestFailed": "Σφάλμα σύνδεσης SMTP: {error}",
+      "smtpTestGenericError": "Αποτυχία δοκίμής σύνδεσης SMTP. Ελέγξτε τις ρυθμίσεις και δοκιμάστε ξανά.",
+      "smtpNotEnabled": "Το SMTP δεν είναι ενεργό. Παρακαλώ ενεργοποιήστε το πριν.",
+      "smtpMissingHostPort": "Εισάγετε διεύθυνση και πόστα του SMTP πριν δοκιμάσετε.",
+      "smtpMissingAuth": "Εισάγετε το όνμα χρήστη και το password του SMTP, ή ενεργοποιήστε την επιλογή 'Χωρίς αυθεντικοποίηση'."
+    },
+    "title": "Ρυθμίσεις",
+    "breadcrumb": "Ρυθμίσεις",
+    "pageTitle": "Ρυθμίσεις",
+    "tooltips": {
+      "testSmtp": "Δοκιμή σύνδεσης SMTP, με τις παραμέτρους που βάλατε στη φόρμα. Για να γίνουν μόνιμες, κάντε αποθήκευση μετα την δοκιμή.",
+      "defaultPlaceholder": "Εισάγετε και πατήστε Enter"
+    },
+    "redirectUri": {
+      "placeholder": "https://mysite.com",
+      "previewLabel": "URL που θα αποθηκευτεί:"
+    }
+  },
+  "share": {
+    "errors": {
+      "invalidPassword": "Λάθος password. Ξαναδοκιμάστε.",
+      "loadFailed": "Αποτυχία φόρτωσης κοινής χρήσης",
+      "downloadFailed": "Αποτυχία download αρχείου"
+    },
+    "messages": {
+      "downloadStarted": "Εναρξη Download"
+    },
+    "password": {
+      "title": "Κοινή χρήση με προστασία password",
+      "protected": "Αυτή η κοινή χρήση είναι προστατευμένη με password",
+      "incorrect": "Λάθος password. Ξαναδοκιμάστε.",
+      "label": "Password",
+      "placeholder": "Εισάγετε το password",
+      "submit": "Υποβολή"
+    },
+    "details": {
+      "untitled": "Ανώνυμη κοινή χρήση",
+      "created": "Δημιουργήθηκε: {date}",
+      "expires": "Λήξη: {date}"
+    },
+    "downloadAll": "Download όλων",
+    "notFound": {
+      "title": "Δεν βρέθηκε η κοινή χρήση",
+      "description": "Αυτή η κοινή χρήση έχει αφαιρεθεί ή λήξει."
+    },
+    "pageTitle": "Κοινή χρήση"
+  },
+  "shareActions": {
+    "deleteTitle": "Διαγραφή κοινής χρήσης",
+    "deleteConfirmation": "Είστε σίγουρος για την διαγραφή της κοινής χρήσης?",
+    "addDescriptionPlaceholder": "Προσθήκη περιγραφής...",
+    "editTitle": "Επεξεργασία κοινής χρήσης",
+    "nameLabel": "Ονομα κοινής χρήσης",
+    "descriptionLabel": "Περιγραφή",
+    "descriptionPlaceholder": "Εισαγωγή περιγραφής (προαιρετικό)",
+    "expirationLabel": "Ημερομηνία λήξης",
+    "expirationPlaceholder": "MM/DD/YYYY HH:MM",
+    "maxViewsLabel": "Μέγιστο πλήθος θεάσεων",
+    "maxViewsPlaceholder": "Αφήστε κενό για απεριόριστες",
+    "passwordProtection": "Προστασια με password",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Εισαγωγή password",
+    "newPasswordLabel": "Νεο password (αφήστε κενό για να διατηρηθεί το υπάρχον)",
+    "newPasswordPlaceholder": "Εισαγωγή νέου password",
+    "manageFilesTitle": "Διαχείρηση αρχείων",
+    "manageRecipientsTitle": "Διαχείρηση παραληπτών",
+    "editSuccess": "Επιτυχής ενημέρωση κοινής χρήσης",
+    "editError": "Επιτυχία ενημέρωσης κοινής χρήσης",
+    "bulkDeleteConfirmation": "θέλετε σίγουρα να διαγράψετε {count, plural, =1 {1 κοινή χρήση} other {# κοινές χρήσεις}}? Η ενέργεια αυτή δεν αναιρείτε.",
+    "bulkDeleteTitle": "Διαγραφή επιλεγμένων κοινών χρήσεων"
+  },
+  "shareDetails": {
+    "title": "¨Λεπτομέρειες κοινής χρήσης",
+    "subtitle": "Προβολή και διαχείριση λεπτομερειών κοινής χρήσης",
+    "basicInfo": "Βασική πληροφορία",
+    "name": "Ονομα",
+    "description": "Περιγραφή",
+    "shareLink": "Link κοινής χρήσης",
+    "dates": "Ημερομηνίες",
+    "security": "Ασφάλεια",
+    "files": "Αρχεία",
+    "recipients": "Παραλήπτες",
+    "views": "Προβολές",
+    "created": "Δημιουργία",
+    "expires": "Λήξη",
+    "never": "Ποτέ",
+    "untitled": "Ανώνυμη κοινή χρήση",
+    "noDescription": "Χωρίς περιγραφή",
+    "notAvailable": "Δ/Υ",
+    "invalidDate": "Ακυρη ημερομηνία",
+    "passwordProtected": "Προστασία password",
+    "publicAccess": "Δημόσια πρόσβαση",
+    "maxViews": "Μέγιστες προβολές:",
+    "noLink": "Δεν έχει δημιουργηθεί link",
+    "generateLink": "Δημιουργία link",
+    "editLink": "Επεξεργασία Link",
+    "copyLink": "Αντιγραφή Link",
+    "openLink": "Ανοιγμα Link",
+    "editSecurity": "Επεξεργασία ασφάλειας",
+    "editExpiration": "Επεξεργασία λήξης",
+    "qrCode": "QR Code",
+    "downloadQrCode": "Download QR Code",
+    "clickToEnlargeQrCode": "Κλικ για μεγένθυση QR Code",
+    "loadError": "Αποτυχία φόρτωσης λεπτομερειών κοινής χρήσης"
+  },
+  "shareExpiration": {
+    "title": "Ρυθμίσης λήξης κοινής χρήσης",
+    "subtitle": "Ρυθμίστε πότε θα λήξη η κοινή χρήση",
+    "currentStatus": "Τρέχουσα κατάσταση ",
+    "expires": "Λήγει:",
+    "neverExpires": "Χωρίς όριο λήξης",
+    "enableExpiration": "Ενεργοποίηση λήξης",
+    "expirationDate": "Ημερομηνία λήξης",
+    "validation": {
+      "dateRequired": "Επιλέξτε ημερομηνία λήξης",
+      "dateMustBeFuture": "Η ημερομηνία λήξης πρέπει να είναι μελλοντική"
+    },
+    "success": {
+      "expirationSet": "Επιτυχής ρυθμιση ημερομηνίας λήξης",
+      "expirationUpdated": "Επιτυχής ενημέρωση ημερομηνίας λήξης",
+      "expirationRemoved": "Επιτυχής αφαίρεση ημερομηνίας λήξης - η κοινή χρήση τώρα είναι μόνιμη"
+    },
+    "error": {
+      "updateFailed": "Αποτυχία ενημέρωσης ρυθμίσεων ημερομηνίας λήξης"
+    },
+    "info": {
+      "title": "About expiration:",
+      "willBeInaccessible": "Η κοινή χρήση θα αφαιρεθεί μετά αυτή την ημερομηνία",
+      "canBeChanged": "Μπορείτε΄να αλλάξετε ή να αφαιρέσετε την ημερομηνία λήξης οποιαδήποτε στιγμή",
+      "noExpiration": "Αυτή η κοινή χρήση δεν λήξη, θα είναι ενεργή μόνιμα."
+    }
+  },
+  "shareFile": {
+    "title": "Κοινή χρήση αρχείου",
+    "linkTitle": "Δημιουργία link",
+    "nameLabel": "Ονομα κοινής χρήσης",
+    "namePlaceholder": "Εισάγετε όνομα κοινής χρήσης",
+    "descriptionLabel": "Περιγραφή",
+    "descriptionPlaceholder": "Εισάγετε περιγραφή (προαιρετικό)",
+    "expirationLabel": "Ημερομηνία λήξης",
+    "expirationPlaceholder": "MM/DD/YYYY HH:MM",
+    "maxViewsLabel": "Μέγιστο πλήθος προβολών",
+    "maxViewsPlaceholder": "Αφήστε το κενό για χωρίς όριο",
+    "passwordProtection": "Προστασια password",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Εισαγωγή password",
+    "linkDescription": "Δημιουργία εξατομικευμένου link κοινής χρήσης αρχείου",
+    "aliasLabel": "Ψευδόνυμο link",
+    "aliasPlaceholder": "Εισαγετε ψευδόνυμο",
+    "linkReady": "Το link σας είναι έτοιμο:",
+    "createShare": "Δημιουργία κοινής χρήσης",
+    "generateLink": "Δημιουργία link",
+    "copyLink": "Αντιγραφή link"
+  },
+  "shareManager": {
+    "deleteSuccess": "Επιτυχής διαγραφή κοινής χρήσης",
+    "deleteError": "Αποτυχία διαγραφής κοινής χρήσης",
+    "updateSuccess": "Επιτυχία ενημέρωσης κοινής χρήσης",
+    "updateError": "Αποτυχία ενημέρωσης κοινής χρήσης",
+    "securityUpdateSuccess": "Επιτυχής ενημέρωση ρυθμίσεων ασφάλειας",
+    "securityUpdateError": "Αποτυχία ενημέρωσης ρυθμίσεων ασφάλειας",
+    "expirationUpdateSuccess": "Επιτυχής ενημέρωση ρυθμίσεων λήξης",
+    "expirationUpdateError": "Αποτυχία ενημέρωση ρυθμίσεων λήξης",
+    "filesUpdateSuccess": "Τα αρχεία ενημερώθηκαν επιτυχώς",
+    "filesUpdateError": "Αποτυχία ενημέρωσης αρχείων",
+    "recipientsUpdateSuccess": "Επιτυχής ενημέρωση παραληπτών",
+    "recipientsUpdateError": "Αποτυχία ενημέρωσης παραληπτών",
+    "linkGenerateSuccess": "Το link δημιουργήθηκε επιτυχώς",
+    "linkGenerateError": "Αποτυχία δημιουργίας link",
+    "notifyLoading": "Αποστολή ειδοποιήσεων...",
+    "notifySuccess": "Οι παραλήπτες ενημερώθηκαν επιτυχώς",
+    "notifyError": "Αποτυχία ενημέρωσης παραληπτών",
+    "bulkDeleteError": "Αποτυχία διαγραφής κοινής χρήσης",
+    "bulkDeleteLoading": "Διαγραφή {count, plural, =1 {1 κοινής χρήσης} other {# κοινών χρήσεων}}...",
+    "bulkDeleteSuccess": "{count, plural, =1 {1 κονή χρήση διαγράφηκε} other {# κοινές χρήσεις διαγράφηκαν}}",
+    "downloadSuccess": "Το download ξεκίνησε επιτυχώς",
+    "downloadError": "Αποτυχία download κονόχρηστων αρχείων",
+    "noFilesToDownload": "Δεν υπάρχουν αρχεία για download",
+    "creatingZip": "Δημιουργία αρχείου ZIP...",
+    "zipDownloadSuccess": "Το αρχείο ZIP έγινε download με επιτυχία",
+    "zipDownloadError": "Αποτυχία δημιουργίας αρχείου ZIP",
+    "singleShareZipName": "{shareName}_files.zip",
+    "multipleSharesZipName": "{count}_shares_files.zip",
+    "defaultShareName": "Share"
+  },
+  "shareMultipleFiles": {
+    "title": "Share Multiple Files",
+    "shareNameLabel": "Ονομα κοινής χρήσης",
+    "shareNamePlaceholder": "Εισάγετε όνομα κοινής χρήσης",
+    "descriptionLabel": "Περιγραφή",
+    "descriptionPlaceholder": "Εισαγετε περιγραφή (προαιρετικό)",
+    "filesToShare": "Αρχεία για την κοινή χρήση",
+    "files": "αρχεία",
+    "totalSize": "Συνολικό μέγεθος",
+    "creating": "Δημιουργία...",
+    "create": "Δημιουργία κοινής χρήσης"
+  },
+  "shareSecurity": {
+    "title": "Ασφάλεια κοινής χρήσης",
+    "subtitle": "Ρύθμιση προστασίας password και επιλογές ασφάλειας για αυτήν την κοινή χρήση",
+    "currentStatus": "Τρέχουσα κατάσταση",
+    "passwordProtection": "Προστασία password",
+    "password": "Password",
+    "newPassword": "Νεο Password",
+    "passwordPlaceholder": "Εισάγετε ασφαλές password",
+    "existingPasswordMessage": "Η κοινή χρήση έχει ήδη password. αν θέλετε να το ενημερώσετε, βάλτε το καινούριο στο παρακάτω πεδίο και αποθηκευστέ.",
+    "passwordRequirements": {
+      "title": "Προϋποθέσεις password:",
+      "minLength": "Τουλάχιστον 2 χαρακτήρες"
+    },
+    "info": {
+      "title": "Πως λειτουργεί:",
+      "withPassword": "Οι χρήστες θα εισάγουν password για να αποκτήσουν πρόσβαση στην κοινή χρήση.",
+      "withoutPassword": "Οποιοσδήποτε έχει το link μπορεί να έχει πρόσβαση στην κοινή χρήση χωρίς password."
+    },
+    "validation": {
+      "passwordRequired": "Το password είναι υποχρεωτικό",
+      "passwordTooShort": "Το password πρέπει να έχει τουλάχιστον 2 χαρακτήρες"
+    },
+    "success": {
+      "passwordSet": "Η προστασια με password ενεργοποιήθηκε επιτυχώς",
+      "passwordUpdated": "Επιτυχής ενημέρωση password",
+      "passwordRemoved": "Η προστασία με password αφαιρέθηκε επιτυχώς"
+    },
+    "error": {
+      "updateFailed": "Αποτυχία ενημέρωσης ρυθμίσεων ασφάλειας"
+    }
+  },
+  "shares": {
+    "errors": {
+      "loadFailed": "Αποτυχία φόρτωσης κοινών χρήσεων",
+      "notifyFailed": "Αποτυχία ενημέρωσης παραληπτών",
+      "smtpConfigFailed": "Αποτυχία φόρτωσης ρύθμισεων SMTP"
+    },
+    "messages": {
+      "linkCopied": "Το link έγινε αντιγραφή sto clipboard",
+      "recipientsNotified": "Οι παραλήπτες ενημερώθηκαν επιτυχώς"
+    },
+    "empty": {
+      "message": "Δεν υπάρχουν κοινές χρήσεις",
+      "createButton": "Δημιουργία κοινής χρήσης"
+    },
+    "header": {
+      "title": "Οι κοινές χρήσεις μου",
+      "myShares": "Οι κοινές χρήσεις μου"
+    },
+    "search": {
+      "title": "Ολες οι κοινές χρήσεις",
+      "createButton": "Δημιουργία κοινής χρήσης",
+      "placeholder": "Εύρεση κοινής χρήσης...",
+      "results": "Βρέθηκαν {filtered} από {total} κοινές χρήσεις"
+    },
+    "pageTitle": "Κοινές χρήσεις"
+  },
+  "sharesTable": {
+    "ariaLabel": "Πίνακας κοινών χρήσεων",
+    "never": "Ποτέ",
+    "columns": {
+      "name": "ΟΝΟΜΑ",
+      "description": "ΠΕΡΙΓΡΑΦΗ",
+      "createdAt": "ΔΗΜΙΟΥΡΓΗΘΗΚΕ",
+      "expiresAt": "ΛΗΓΕΙ",
+      "status": "ΚΑΤΑΣΤΑΣΗ",
+      "security": "ΑΣΦΑΛΕΙΑ",
+      "files": "ΑΡΧΕΙΑ",
+      "recipients": "ΠΑΡΑΛΗΠΤΕΣ",
+      "actions": "ΕΝΕΡΓΕΙΕΣ"
+    },
+    "status": {
+      "neverExpires": "Χωρίς όριο λήξης",
+      "active": "Ενεργό",
+      "expired": "Εληξε"
+    },
+    "security": {
+      "protected": "Προστετευμένο",
+      "public": "Δημόσιο"
+    },
+    "filesCount": "αρχεία",
+    "recipientsCount": "παραλήπτες",
+    "actions": {
+      "menu": "Μενου ενεργειών κοινής χρήσης",
+      "edit": "Επεξεργασία",
+      "manageFiles": "Διαχείρηση αρχείων",
+      "manageRecipients": "Διαχείρηση παραληπτών",
+      "viewDetails": "Προβολή λεπτομερειών",
+      "generateLink": "Δημιουργία link",
+      "editLink": "Επεξεργασία link",
+      "copyLink": "Αντιγραφή link",
+      "viewQrCode": "Προβολή QR Code",
+      "notifyRecipients": "Ειδοποίηση παραληπτών",
+      "downloadShareFiles": "Download όλα τα αρχεία",
+      "delete": "Διαγραφή"
+    },
+    "bulkActions": {
+      "actions": "Ενέργειες",
+      "download": "Download επιλεγμένων",
+      "delete": "Διαγραφή",
+      "selected": "{count, plural, =1 {1 κοινή χρήση επιλέχθηκε} other {# κοινές χρήσεις επιλέχθηκαν}}"
+    },
+    "selectAll": "Επιλογή όλων",
+    "selectShare": "Επιλογη κοινής χρήσης {shareName}"
+  },
+  "storageUsage": {
+    "title": "Χρήση αποθηκευτικού χώρου",
+    "ariaLabel": "Γράφημα χρήσης αποθηκευτικού χώρου",
+    "used": "χρησιμοποιείτε",
+    "available": "διαθέσιμο",
+    "total": "Σύνολο",
+    "loading": "Φορτωση...",
+    "retry": "επαναπροσπάθεια",
+    "errors": {
+      "title": "Μη διαθέσιμες πληροφορίες αποθηκευτικού χώρου",
+      "detectionFailed": "Άδυναμία εντοπισμού αποθηκευτικού χώρου. Μπορεί να οφείλεται στις ρυθμίσεις του συστήματος ή τα προνόμια πρόσβασης.",
+      "serverError": "Σφάλμα κατά την προσπάθια εντοπισμού πληροφοριών αποθηκευτικού χώρου. Δοκιμάστε αργότερα.",
+      "unknown": "Σφάλμα κατά την φόρτωση των πληροφοριών αποθηκευτικού χώρου."
+    }
+  },
+  "theme": {
+    "toggle": "Αλλαγή θέματος",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "twoFactor": {
+    "title": "Αυθεντικοποίηση δύο βημάτων (2FA)",
+    "description": "Προσθέστε ενα έξτρα στρώμα προστασίας στον λογαριασμό σας",
+    "enabled": "Ο λογαριασμός σας προστατεύεται με αυθεντικοποίηση δύο βημάτων (2FA)",
+    "disabled": "Η Αυθεντικοποίηση δύο βημάτων (2FA) δεν είναι ενεργή",
+    "status": {
+      "label": "Κατάσταση:",
+      "enabled": "Ενεργή",
+      "disabled": "Ανενεργή"
+    },
+    "buttons": {
+      "enable2FA": "Ενεργοποίηση 2FA",
+      "disable2FA": "Απενεργοποίηση 2FA"
+    },
+    "setup": {
+      "title": "Ενεργοποίηση αυθεντικοποίησης δύο βημάτων (2FA)",
+      "description": "Σκανάρετε το QR code με την εφαρμογή αυθεντικοποίησης σας, και βάλτε τον κωδικό επιβεβαίωσης.",
+      "qrCode": "QR Code",
+      "manualEntryKey": "Manual Entry Key",
+      "verificationCode": "Κωδικός επιβεβαίωσης",
+      "verificationCodePlaceholder": "Εισαγωγή 6-ψήφιου key",
+      "verificationCodeDescription": "Εισαγωγή 6-ψήφιου κωδικού επιβεβαίωσης απο την εφαρμογή αυθεντικοποίησης σας",
+      "verifyAndEnable": "Επαλήθευση & ενεργοποίηση",
+      "cancel": "Ακύρωση"
+    },
+    "disable": {
+      "title": "Απενεργοποίηση αυθεντικοποίηση δύο βημάτων (2FA)",
+      "description": "Βάλτε το password σας για επαλήθεση απενεργοποίησης του 2FA.",
+      "password": "Password",
+      "passwordPlaceholder": "Εισαγωγή password",
+      "confirm": "Επιβεβαίωση απενεργοποίησης",
+      "cancel": "Ακύρωση"
+    },
+    "backupCodes": {
+      "title": "Backup Codes",
+      "description": "Αποθηκευστέ τους Backup Codes σε ασφαλές μέρος. Σε περίπτωση που χάσατε την συσκευή αυθεντικοποίησης σας, μπορείτε να μπείτε στο λογαριασμό σας με τους Backup Codes.",
+      "warning": "Σημαντικό:",
+      "warningText": "Κάθε Backup Vode μπορεί να χρησιμοποιηθεί μόνο μια φορά. Κρατήστε τους ασφαλείς και μην τους μοιραστείτε με κανέναν.",
+      "generateNew": "Δημιουργία νέων Backup Codes",
+      "download": "Download Backup Codes",
+      "copyToClipboard": "Αντιγραφή στο clipboard",
+      "savedMessage": "Αποθήκευσα τους Backup Codes μου",
+      "available": "{count} Backup Codes διαθέσιμοι",
+      "instructions": [
+        "• Αποθηκεύστε τους σε ασφαλές μέρος",
+        "• Κάθε Backup Code χρησιμοποιείτε μόνο μια φορά",
+        "• Μπορείτε να δημιουργήσετε νέους οποιαδήποτε στιγμή"
+      ]
+    },
+    "verification": {
+      "title": "Αυθεντικοποίηση δύο βημάτων (2FA)",
+      "description": "Εισαγωγή 6-ψήφιου κωδικού επιβεβαίωσης 2FA απο την εφαρμογή αυθεντικοποίησης σας",
+      "backupDescription": "Εισάγετε έναν από τους Backup Codes για να συνεχίοετε",
+      "verificationCode": "Κωδικός επιβεβαίωσης 2FA",
+      "backupCode": "Backup Code",
+      "verificationCodePlaceholder": "000000",
+      "backupCodePlaceholder": "XXXX-XXXX",
+      "verify": "Επιβεβαίωση",
+      "verifying": "Επιβεβαίωση...",
+      "useBackupCode": "Χρήση Backup Code",
+      "useAuthenticatorCode": "Χρήση κωδικου επιβεβαίωσης 2FA",
+      "rememberDevice": "Απομνημόνευση αυτής της συσκευής για 30 ημέρες",
+      "rememberDeviceDescription": "Δεν χρείαζεστε κωδικούς 2FA σε αυτή τη συσκευή για 30 ημέρες"
+    },
+    "trustedDevices": {
+      "title": "Αξιόπιστες συσκευές - 2FA",
+      "description": "Συσκευές που δεν χρειάζονται αυθεντικοποίηση δυο βημάτων (2FA)",
+      "noDevices": "Δεν υπάρχουν αξιόπιστες συσκευές",
+      "deviceName": "Συσκευή",
+      "addedOn": "Προστέθηκε",
+      "expiresOn": "Λήγει",
+      "remove": "Αφαίρεση",
+      "removeAll": "Αφαίρεση όλων",
+      "confirmRemove": "Να αφαίρεθεί η συσκευή από τις αξιόπιστες?",
+      "confirmRemoveAll": "Να αφαιρεθούν όλες οι αξιόπιστες συσκευές?",
+      "deviceRemoved": "Η αξιόπιστη συσκευή αφαιρέθηκε επιτυχώς",
+      "allDevicesRemoved": "Ολες οι αξιόπιστες συσκευές αφαιρέθηκαν επιτυχώς",
+      "loadFailed": "Αποτυχία αφαίρεσης αξιόπιστων συσκευών",
+      "removeFailed": "Αποτυχία αφαίρεσης αξιόπιστης συσκευής",
+      "removeAllFailed": "Αποτυχία αφαίρεσης όλων των αξιόπιστων συσκευών",
+      "loading": "Φόρτωση αξιόπιστων συσκευών...",
+      "noDevicesDescription": "Οι συσκευές θα εμφανιστούν εδώ αφού τις εμπιστευτείτε μέσω της αυθεντικοποίησης 2FA",
+      "tableHeaders": {
+        "device": "Συσκευή",
+        "added": "Προστέθηκε",
+        "expires": "Λήγει",
+        "lastUsed": "Τελευταία χρήση",
+        "ipAddress": "Διεύθυνση IP",
+        "actions": "Ενέργειες"
+      },
+      "status": {
+        "never": "Ποτέ",
+        "expired": "Εληξε"
+      },
+      "modals": {
+        "removeDevice": {
+          "title": "Αφαίρεση αξιόπιστης συσκευής",
+          "added": "Προστέθηκε:",
+          "ip": "IP:"
+        },
+        "removeAllDevices": {
+          "title": "Αφαίρεση όλων των αξιόπιστων συσκευών",
+          "description": "θα αφαιρεθούν {count} αξιοπιστες συσκευές"
+        },
+        "buttons": {
+          "cancel": "Ακύρωση",
+          "removing": "Αφαίρεση...",
+          "removeDevice": "Αφαίρεση συσκευής",
+          "removeAllDevices": "Αφαίρεση όλων των συσκευών"
+        }
+      }
+    },
+    "messages": {
+      "enabledSuccess": "Αυθεντικοποίηση δύο βημάτων (2FA) ενεργοποιήθηκε επιτυχώς!",
+      "disabledSuccess": "Αυθεντικοποίηση δύο βημάτων (2FA) απενεργοποιήθηκε",
+      "backupCodesGenerated": "Νέοι Backup Codes δημιουργήθηκαν επιτυχώς",
+      "backupCodesCopied": "Οι Backup Codes αντιγράφηκαν στο clipboard",
+      "setupFailed": "Αποτυχία δημιουργίας ρύθμισης 2FA",
+      "verificationFailed": "Λάθος κωδικός επιβεβαίωσης",
+      "disableFailed": "Αποτυχία απενεργοποίησης 2FA. Ελέγξτε το password σας.",
+      "backupCodesFailed": "Αποτυχία δημιουργίας Backup Codes",
+      "backupCodesCopyFailed": "Αποτυχία αντιγραφής Backup Codes",
+      "statusLoadFailed": "Αποτυχία φόρτωσης κατάστασης 2FA",
+      "enterVerificationCode": "Εισάγετε τον κωδικό επιβεβαίωσης",
+      "enterPassword": "Εισάγετε το password σας",
+      "deviceTrusted": "Η συσκευή αυτή έγινε αξιόπιστη για 30 ημέρες"
+    },
+    "errors": {
+      "invalidVerificationCode": "Λάθος κωδικός επιβεβαίωσης",
+      "invalidTwoFactorCode": "Λάθος κωδικός αυθεντικοποίησης δύο βημάτων (2FA)",
+      "twoFactorRequired": "Απαιτείται κωδικός αυθεντικοποίησης δύο βημάτων (2FA)",
+      "twoFactorAlreadyEnabled": "Αυθεντικοποίηση δύο βημάτων (2FA) ήδη ενεργή",
+      "twoFactorNotEnabled": "Η αυθεντικοποίησης δύο βημάτων (2FA) δεν είναι ενεργή",
+      "passwordVerificationRequired": "Υποχρεωτική επιβεβαίωση password",
+      "invalidPassword": "Λάθος password",
+      "userNotFound": "Δεν βρέθηκε ο χρήστης"
+    },
+    "deviceNames": {
+      "unknownDevice": "Αγνωστη συσκευή",
+      "browsers": {
+        "chrome": "Chrome",
+        "firefox": "Firefox",
+        "safari": "Safari",
+        "edge": "Edge"
+      },
+      "platforms": {
+        "windows": " σε Windows",
+        "macos": " σε macOS",
+        "linux": " σε Linux",
+        "iphone": " σε iPhone",
+        "android": " σε Android"
+      }
+    }
+  },
+  "uploadFile": {
+    "title": "Upload αρχείου",
+    "multipleTitle": "Upload αρχείων",
+    "selectFile": "Κάντε κλικ να επιλέξετε αρχέιο",
+    "selectMultipleFiles": "Κάντε κλικ για να επιλέξε ένα ή περισσότερα αρχεία",
+    "dragAndDrop": "ή σύρερε αρχεία εδώ",
+    "filesQueued": "{count, plural, one {# αρχείο στην ουρά για upload} other {# αρχεία στην ουρά για upload}}",
+    "preview": "Προεπισκόπηση",
+    "uploadProgress": "Πρόοδος upload",
+    "upload": "Upload",
+    "startUploads": "Εναρξη Uploads",
+    "retry": "Επαναπροσπάθεια",
+    "finish": "Τέλος",
+    "success": "Το upload ολοκληρώθηκε επιτυχώς",
+    "allSuccess": "{count, plural, =1 {αρχείο έγινε upload επιτυχώς} other {# αρχεία έγιναν upload επιτυχώς}}",
+    "partialSuccess": "{success} Τα αρχεία έγιναν upload επιτυχώς, {error} απέτυχαν",
+    "error": "Αποτυχία upload αρχείου",
+    "fileSizeExceeded": "Το μέγεθος του αρχείου ξεπερνά το όριο των {maxsizemb}MB.",
+    "insufficientStorage": "Δεν υπάρχει διαθέσιμος χώρος. Υπάρχουν μόνο {availablespace}MB διαθέσιμα.",
+    "unauthorized": "Μη εξουσιοδοτημένη πρόσβαση: μια έγκυρη συνεδρία απαιτείται για αυτόν τον πόρο.",
+    "globalDrop": {
+      "title": "Σύρετε αρχεία για upload",
+      "description": "Ελευθερώστε το κλικ για upload"
+    },
+    "confirmCancel": {
+      "title": "Ακύρωση Upload",
+      "messageSingle": "Ενα upload σε εξέληξη.",
+      "messageMultiple": "Υπάρχουν {count} upload σε εξέληξη.",
+      "warning": "Αν κλείσετε το παράθυρο του browser, τα uploads θα ακυρωθούν και η όποια πρόοδος θα χαθεί.",
+      "continue": "Συνέχιση Upload",
+      "cancel": "Ακύρωση Upload"
+    },
+    "pasteSuccess": "{count, plural, =1 {εικόνα επικολλήθηκε και έγινε upload με επιτυχία} other {# εικόνες επικολλήθηκαν και έγιναν upload με επιτυχία}}"
+  },
+  "users": {
+    "modes": {
+      "create": "δημιουργία",
+      "edit": "επεξεργασία"
+    },
+    "errors": {
+      "loadFailed": "Αποτυχία φόρτωσης χρηστών",
+      "submitFailed": "Αποτυχία {mode} χρήστη",
+      "deleteFailed": "Αποτυχία διαγραφής χρήστη",
+      "statusUpdateFailed": "Αποτυχία ενημέρωσης κατάστασης χρήστη"
+    },
+    "messages": {
+      "createSuccess": "Ο χρήστης δημιουργήθηκε επιτυχώς",
+      "updateSuccess": "Ο χρήστης ενημερώθηκε επιτυχώς",
+      "deleteSuccess": "Ο χρήστης διαγράφηκε επιτυχώς",
+      "activateSuccess": "Ο χρήστης ενεργοποιήθηκε επιτυχώς",
+      "deactivateSuccess": "Ο χρήστης απενεργοποιήθηκε επιτυχώς"
+    },
+    "actions": {
+      "edit": "Επεξεργασία",
+      "activate": "Ενεργοποίηση",
+      "deactivate": "Απενεργοποίηση",
+      "delete": "Διαγραφή"
+    },
+    "delete": {
+      "title": "Επιβεβαίωση διαγραφής χρήστη",
+      "confirmation": "Θέλετε σίγουρα να διαγράψετε τον χρήστη {firstName} {lastName}? Η ενέργεια αυτή δεν αναιρείτε.",
+      "confirm": "Διαγραφή χρήστη"
+    },
+    "form": {
+      "titleCreate": "Προσθήκη νέου χρήστη",
+      "titleEdit": "Επεξεργασία χρήστη",
+      "firstName": "Ονομα",
+      "lastName": "Επώνυμο",
+      "username": "Username",
+      "email": "Email",
+      "password": "Password",
+      "newPassword": "Νέο Password (optional)",
+      "passwordPlaceholder": "Αφήστε κενό για να διατηρηθεί το υπάρχον",
+      "role": "Ρόλος",
+      "roleUser": "χρήσης",
+      "roleAdmin": "Διαχειριστής",
+      "create": "Δημιουργία",
+      "save": "Αποθήκευση"
+    },
+    "status": {
+      "title": "Επιβεβαίωση αλλαγής κατάστασης",
+      "confirmation": "Είστε σίγουρος για την {action} του χρήστη {firstName} {lastName}?",
+      "activate": "Ενεργοποίηση",
+      "deactivate": "Απενεργοποίηση",
+      "user": "Χρήστης"
+    },
+    "header": {
+      "title": "Διαχείριση χρήστη",
+      "addUser": "Προσθήκη χρήστη",
+      "management": "Διαχείρηση χρήστη"
+    },
+    "table": {
+      "user": "ΧΡΗΣΤΗΣ",
+      "email": "EMAIL",
+      "status": "ΚΑΤΑΣΤΑΣΗ",
+      "role": "ΡΟΛΟΣ",
+      "actions": "ΕΝΕΡΓΕΙΕΣ",
+      "active": "Ενεργός",
+      "inactive": "Ανενεργός",
+      "admin": "Διαχειριστής",
+      "userr": "Χρήστης"
+    }
+  },
+  "validation": {
+    "firstNameRequired": "Το όνομα είναι υποχρεωτικό",
+    "lastNameRequired": "Το επώνυμο είναι υποχρεωτικό",
+    "usernameLength": "Το username πρέπει να έχει μήκος 3 χαρακτήρες τουλάχιστον",
+    "usernameSpaces": "Το username δεν μπορεί να περιέχει κενά",
+    "invalidEmail": "Εισάγετε μια έγκυρη διεύθυνση email",
+    "passwordLength": "Το password πρέπει να περιέχει 8 χαρακτήρες τουλάχιστον",
+    "passwordsMatch": "Τα password πρέπει να ταιριάζουν",
+    "emailRequired": "Το email είναι υποχρεωτικό",
+    "emailOrUsernameRequired": "Πρέπει να υπάρχει email ή username",
+    "passwordRequired": "Το password είναι υποχρεωτικό",
+    "passwordMinLength": "Το password πρέπει να περιέχει 6 χαρακτήρες τουλάχιστον",
+    "nameRequired": "Το όνομα είναι υποχρεωτικό",
+    "required": "Το πεδίο αυτό είναι υποχρεωτικό"
+  }
+}
